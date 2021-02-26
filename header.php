@@ -13,7 +13,7 @@
     <header>
 
       <section class="search">
-        <div class="container">Search</div>
+        <?php echo do_shortcode('[wcas-search-form]'); ?>
       </section>
 
       <section class="top-bar">
@@ -22,7 +22,12 @@
             <div class="brand col-12 col-md-3 col-lg-2 text-center text-md-left">Logo</div>
             <div class="second-column col-12 col-md-9 col-lg-10">
               <div class="row">
-                <div class="account col-12">Account</div>
+                <div class="account col-12">
+                  <div class="cart text-right">
+                    <a href="<?php echo wc_get_cart_url(); ?>"><i class="fas fa-shopping-cart"></i></a>
+                    <span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                  </div>
+                </div>
                 <div class="col-12">
                   <nav class="main-menu navbar navbar-expand-md navbar-light" role="navigation">
                     <!-- Brand and toggle get grouped for better mobile display -->

@@ -49,3 +49,20 @@ add_action('after_setup_theme', 'todxs_loja_config', 0);
 if(class_exists('WooCommerce')) {
   require get_template_directory() . '/inc/wc-modifications.php';
 }
+
+/**
+ * Show cart contents / total Ajax
+ */
+add_filter('woocommerce_add_to_cart_fragments', 'todxs_loja_woocommerce_header_add_to_cart_fragment');
+
+function todxs_loja_woocommerce_header_add_to_cart_fragment($fragments) {
+	global $woocommerce;
+
+	ob_start();
+
+	?>
+	<span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+	<?php
+	$fragments['span.items'] = ob_get_clean();
+	return $fragments;
+}
