@@ -1,0 +1,34 @@
+div.qib-container:not(#qib_id):not(#qib_id) {
+  width: 160px;
+  height: 40px;
+  padding: 0 4px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 20px;
+  text-align: center;
+
+  @include untilMedium {
+    display: inline-flex !important;
+  }
+  @include atMedium {
+    width: 110px;
+  }
+  
+  .qib-button:not(#qib_id):not(#qib_id) {
+    border-radius: 50%;
+    border: none;
+    width: 30px;
+    height: 30px;
+  }
+  input.qty:not(#qib_id):not(#qib_id) {
+    border: none;
+    width: 90px;
+    height: 40px;
+    font-weight: 600;
+    @include atMedium {
+      width: 40px;
+    }
+  }
+}
