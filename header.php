@@ -22,12 +22,31 @@
             <div class="brand col-12 col-md-3 col-lg-2 text-center text-md-left">Logo</div>
             <div class="second-column col-12 col-md-9 col-lg-10">
               <div class="row">
-                <div class="account col-12">
-                  <div class="cart text-right">
-                    <a href="<?php echo wc_get_cart_url(); ?>"><i class="fas fa-shopping-cart"></i></a>
-                    <span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                <?php if(class_exists('WooCommerce')): ?>
+                  <div class="account col-12">
+                    <div class="navbar-expand">
+                      <ul class="navbar-nav float-left">
+                        <?php $my_account_page_id = get_permalink(get_option('woocommerce_myaccount_page_id'));
+                          if(is_user_logged_in()): ?>
+                          <li>
+                            <a href="<?php echo esc_url($my_account_page_id); ?>" class="nav-link">Minha conta</a>
+                          </li>
+                          <li>
+                            <a href="<?php echo esc_url(wp_logout_url($my_account_page_id)); ?>" class="nav-link">Sair</a>
+                          </li>
+                        <?php else: ?>
+                          <li>
+                            <a href="<?php echo esc_url($my_account_page_id); ?>" class="nav-link">Entrar / Criar conta</a>
+                          </li>
+                        <?php endif; ?>
+                      </ul>
+                    </div>
+                    <div class="cart text-right">
+                      <a href="<?php echo wc_get_cart_url(); ?>"><i class="fas fa-shopping-cart"></i></a>
+                      <span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                    </div>
                   </div>
-                </div>
+                <?php endif; ?>
                 <div class="col-12">
                   <nav class="main-menu navbar navbar-expand-md navbar-light" role="navigation">
                     <!-- Brand and toggle get grouped for better mobile display -->
