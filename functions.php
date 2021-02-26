@@ -41,6 +41,8 @@ function todxs_loja_config() {
   if ( ! isset( $content_width ) ) {
     $content_width = 600;
   }
+
+	require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 }
 add_action('after_setup_theme', 'todxs_loja_config', 0);
 
