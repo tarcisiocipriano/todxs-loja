@@ -1,5 +1,8 @@
 <?php
 
+require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+require_once get_template_directory() . '/inc/customizer.php';
+
 function todxs_loja_scripts() {
   wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), null, true);
   wp_enqueue_script('todxs_loja_script_vendors', get_template_directory_uri() . '/scripts/vendors.js', array(), '1.0', true);
@@ -48,8 +51,6 @@ function todxs_loja_config() {
   if ( ! isset( $content_width ) ) {
     $content_width = 600;
   }
-
-	require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 }
 add_action('after_setup_theme', 'todxs_loja_config', 0);
 
