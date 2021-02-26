@@ -10,13 +10,25 @@ get_header(); ?>
       <div class="container">Slider</div>
     </section>
     <section class="popular-products">
-      <div class="container">Popular Products</div>
+      <div class="container">
+        <h2>Os populares</h2>
+        <?php echo do_shortcode('[products limit="4" columns="4" orderby="popularity"]'); ?>
+      </div>
     </section>
     <section class="new-arrivals">
-      <div class="container">New Arrivals</div>
+      <div class="container">
+        <h2>Novidades</h2>
+        <?php echo do_shortcode('[products limit="4" columns="4" orderby="date"]'); ?>
+      </div>
     </section>
     <section class="deal-of-the-week">
-      <div class="container">Deal of the Week</div>
+      <div class="container">
+        <h2>Promoção da semana</h2>
+        <div class="row d-flex align-items-center">
+          <div class="deal-img col-12 col-md-6 ml-auto text-center"></div>
+          <div class="deal-desc col-12 col-md-4 mr-auto text-center"></div>
+        </div>
+      </div>
     </section>
 
     <section class="lab-blog">

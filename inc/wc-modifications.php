@@ -29,9 +29,6 @@ function todxs_loja_wc_modify() {
     function todxs_loja_close_sidebar_tags() {
       echo '</div>';
     }
-
-    // show product short description
-    add_action('woocommerce_after_shop_loop_item_title', 'the_excerpt', 1);
   }
   
   // content column - open
@@ -50,7 +47,9 @@ function todxs_loja_wc_modify() {
     echo '</div>';
   }
   
-  
+  // show product short description
+  add_action('woocommerce_after_shop_loop_item_title', 'the_excerpt', 1);
+
   // filter example - remove store title
   // add_filter('woocommerce_show_page_title', 'todxs_loja_remove_shop_title');
   // function todxs_loja_remove_shop_title() {
