@@ -1,0 +1,95 @@
+.woocommerce-cart.woocommerce-page {
+
+}
+
+table.shop_table {
+
+  &.cart {
+    background-color: #fff;
+
+    thead, tbody {
+      tr {
+        display: grid;
+        th, td {
+          &.product-remove { order: 1; }
+        }
+      }
+    }
+
+    thead {
+      tr {
+        padding: 8px 16px;
+        th {
+          padding: 0;
+        }
+      }
+      
+    }
+
+    tbody {
+      &:nth-child(2n) td { background-color: transparent; }
+      .product-thumbnail, .product-name, .product-quantity {
+        &:before { content: none; }
+      }
+
+      tr {
+        border-top: 1px solid rgba(0,0,0,.1);
+        padding: 16px;
+        @include untilMedium {
+          &:first-child { border: none; }
+        }
+        @include atMedium {
+          padding: 8px 16px;
+        }
+        td {
+          border: none;
+          align-self: center;
+          padding: 4px 0;
+          @include untilMedium {
+            text-align: center !important;
+          }
+          @include atMedium {
+            padding: 0;
+          }
+          &::before { float: none; }
+          &.product-remove {
+            @extend %remove;
+          }
+          &.product-thumbnail {
+            display: block;
+            img {
+              width: 80px;
+            }
+          }
+        } // td
+      } // tr
+    } // tbody
+
+    @include atMedium {
+      thead, tbody {
+        tr:first-child, tr:not(:last-child) {
+          grid-template-columns: 120px 1fr 80px 140px 80px 50px;
+          column-gap: 8px;
+        }
+      }
+    }
+  } 
+
+}
+
+%remove {
+  a.remove {
+    @include untilMedium {
+      display: inline;
+      font-size: 0;
+        &:hover {
+          color: red !important;
+        }
+      &::before {
+        content: 'Remover';
+        font-size: 1rem;
+        font-weight: normal;
+      }
+    }
+  }
+}
