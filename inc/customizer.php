@@ -90,5 +90,50 @@ function todxs_loja_customizer($wp_customize) {
     );
   }
 
+  /*--------------------------------------------------------------------------------*/
+  // homepage section
+  $wp_customize->add_section(
+    'sec_home_page', array(
+      'title'       => 'Configurações da tela inicial',
+      'description' => 'Configure a oferta da semana'
+    )
+  );
+    // deal of the week
+    $wp_customize->add_setting(
+      "set_deal_show", array(
+        'type'              => 'theme_mod',
+        'default'           => '',
+        'sanitize_callback' => 'todxs_loja_sanitize_checkbox'
+      )
+    );
+    $wp_customize->add_control(
+      "set_deal_show", array(
+        'label'       => "Mostrar oferta da semana",
+        'description' => "Marque para mostrar",
+        'section'     => 'sec_home_page',
+        'type'        => 'checkbox'
+      )
+    );
+    // deal of the week
+    $wp_customize->add_setting(
+      "set_deal", array(
+        'type'              => 'theme_mod',
+        'default'           => '',
+        'sanitize_callback' => 'absint'
+      )
+    );
+    $wp_customize->add_control(
+      "set_deal", array(
+        'label'       => "Oferta da semana",
+        'description' => "ID do produto ofertado",
+        'section'     => 'sec_home_page',
+        'type'        => 'number'
+      )
+    );
+
 }
 add_action('customize_register', 'todxs_loja_customizer');
+
+function todxs_loja_sanitize_checkbox($checked) {
+  return ((isset($checked) && true == $checked) ? true : false);
+}
