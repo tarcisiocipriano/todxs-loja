@@ -1,0 +1,29 @@
+%button {
+  background-color: $green500;
+  color: #fff;
+  border-radius: 20px;
+  &:hover {
+    background-color: $green600;
+    color: #fff;
+  }
+}
+
+.woocommerce {
+  // button common
+  a.button {
+    @extend %button;
+    text-align: center;
+    &.loading {
+      opacity: 1;
+      padding-right: 16px;
+      &::after {
+        content: none;
+      }
+    }
+  }
+  
+  // button in single-product.php
+  button.button.alt {
+    @extend %button;
+  }
+}
