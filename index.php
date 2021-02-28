@@ -24,8 +24,17 @@
           <div><?php the_excerpt(); ?></div>
         </article>
 
-      <?php endwhile; else: ?>
-        <p>Nada encontrado</p>
+      <?php endwhile; ?>
+      <div class="col-12">
+        <?php
+          the_posts_pagination(array(
+            'prev_text' => 'Anterior',
+            'next_text' => 'Próximo'
+          ));
+        ?>
+      </div>
+      <?php else: ?>
+        <div class="col-12"><p>Nada encontrado</p></div>
       <?php endif ?>
 
     </div>
