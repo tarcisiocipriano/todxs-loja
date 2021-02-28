@@ -1,6 +1,24 @@
     <footer>
       <section class="footer-widgets">
-        <div class="container">Footer Widgets</div>
+        <div class="container">
+          <div class="row">
+            <?php if(is_active_sidebar('todxs-loja-sidebar-footer-1')): ?>
+              <div class="col-12 col-md-4">
+                <?php dynamic_sidebar('todxs-loja-sidebar-footer-1'); ?>
+              </div>
+            <?php endif; ?>
+            <?php if(is_active_sidebar('todxs-loja-sidebar-footer-2')): ?>
+              <div class="col-12 col-md-4">
+                <?php dynamic_sidebar('todxs-loja-sidebar-footer-2'); ?>
+              </div>
+            <?php endif; ?>
+            <?php if(is_active_sidebar('todxs-loja-sidebar-footer-3')): ?>
+              <div class="col-12 col-md-4">
+                <?php dynamic_sidebar('todxs-loja-sidebar-footer-3'); ?>
+              </div>
+            <?php endif; ?>
+          </div>
+        </div>
       </section>
       <section class="copyright">
         <div class="container">
