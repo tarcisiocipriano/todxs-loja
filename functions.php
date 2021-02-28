@@ -16,6 +16,7 @@ add_action('wp_enqueue_scripts', 'todxs_loja_scripts');
 function todxs_loja_config() {
   
   add_theme_support('title-tag');
+  add_theme_support('post-thumbnails');
 
   register_nav_menus(
     array(
@@ -49,6 +50,7 @@ function todxs_loja_config() {
   ));
 
   add_image_size('todxs-loja-slider', 1920, 300, array('center', 'center'));
+  add_image_size('todxs-loja-blog', 960, 640, array('center', 'center'));
 
   if ( ! isset( $content_width ) ) {
     $content_width = 600;
