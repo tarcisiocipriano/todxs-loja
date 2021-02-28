@@ -92,6 +92,8 @@ function order_by_stock_status($posts_clauses) {
   return $posts_clauses;
 }
 
+require_once get_template_directory() . '/inc/wc-show-percentage.php';
+
 add_action('widgets_init', 'todxs_loja_sidebars');
 function todxs_loja_sidebars() {
   register_sidebar(array(
