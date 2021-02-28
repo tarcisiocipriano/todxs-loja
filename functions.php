@@ -2,6 +2,11 @@
 
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 require_once get_template_directory() . '/inc/customizer.php';
+require_once get_template_directory() . '/inc/register-sidebars.php';
+if(class_exists('WooCommerce')) {
+  require_once get_template_directory() . '/inc/wc-show-percentage.php';
+  require get_template_directory() . '/inc/wc-modifications.php';
+}
 
 function todxs_loja_scripts() {
   // wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), null, true);
@@ -10,20 +15,29 @@ function todxs_loja_scripts() {
   wp_enqueue_style('todxs_loja_style', get_template_directory_uri() . '/stylesheets/main.css', array(), '1.0', 'all');
   wp_enqueue_style('google_fonts', 'https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Seaweed+Script');
 }
-
 add_action('wp_enqueue_scripts', 'todxs_loja_scripts');
 
 function todxs_loja_config() {
-  
-  add_theme_support('title-tag');
-  add_theme_support('post-thumbnails');
-
   register_nav_menus(
     array(
       'todxs_loja_main_menu' => 'Todxs Loja Main Menu',
       'todxs_loja_footer_menu' => 'Todxs Loja Footer Menu'
     )
   );
+
+  add_theme_support('title-tag');
+  add_theme_support('post-thumbnails');
+
+  add_theme_support('wc-product-gallery-zoom');
+  // add_theme_support('wc-product-gallery-lightbox');
+  add_theme_support('wc-product-gallery-slider');
+
+  add_theme_support('custom-logo', array(
+    'height'      => 40,
+    'width'       => 100,
+    'flex_height' => true,
+    'flex_width'  => true
+  ));
 
   add_theme_support('woocommerce', array(
     'thumbnail_image_width' => 255,
@@ -37,17 +51,6 @@ function todxs_loja_config() {
       'max_columns'     => 4,
     )
   ));
-  
-  add_theme_support('wc-product-gallery-zoom');
-  // add_theme_support('wc-product-gallery-lightbox');
-  add_theme_support('wc-product-gallery-slider');
-  
-  add_theme_support('custom-logo', array(
-    'height'      => 40,
-    'width'       => 100,
-    'flex_height' => true,
-    'flex_width'  => true
-  ));
 
   add_image_size('todxs-loja-slider', 1920, 300, array('center', 'center'));
   add_image_size('todxs-loja-blog', 960, 640, array('center', 'center'));
@@ -57,15 +60,6 @@ function todxs_loja_config() {
   }
 }
 add_action('after_setup_theme', 'todxs_loja_config', 0);
-
-if(class_exists('WooCommerce')) {
-  require get_template_directory() . '/inc/wc-modifications.php';
-}
-
-
-
-require_once get_template_directory() . '/inc/register-sidebars.php';
-require_once get_template_directory() . '/inc/wc-show-percentage.php';
 
 // Show cart contents / total Ajax
 add_filter('woocommerce_add_to_cart_fragments', 'todxs_loja_woocommerce_header_add_to_cart_fragment');
