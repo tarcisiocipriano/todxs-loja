@@ -13,7 +13,7 @@
     <header>
 
       <section class="search">
-        <?php echo do_shortcode('[wcas-search-form]'); ?>
+        <?php echo class_exists('WooCommerce') ? do_shortcode('[wcas-search-form]') : get_search_form(); ?>
       </section>
 
       <section class="top-bar">
