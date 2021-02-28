@@ -86,7 +86,9 @@
               </div> <!-- row -->
             </div> <!-- second-column -->
           </div> <!-- row -->
+          <?php if(is_active_sidebar('todxs-loja-sidebar-header')): ?>
+            <?php dynamic_sidebar('todxs-loja-sidebar-header'); ?>
+          <?php endif; ?>
         </div> <!-- container -->
       </section>
-
     </header>

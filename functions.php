@@ -100,6 +100,15 @@ function todxs_loja_sidebars() {
     'after_title'   => '</h4>'
   ));
   register_sidebar(array(
+    'name'          => 'Todxs Loja Header Sidebar',
+    'id'            => 'todxs-loja-sidebar-header',
+    'description'   => 'Arraste suas widgets para cá',
+    'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper widget-header">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4 class="widget-title">',
+    'after_title'   => '</h4>'
+  ));
+  register_sidebar(array(
     'name'          => 'Todxs Loja Footer Sidebar 1',
     'id'            => 'todxs-loja-sidebar-footer-1',
     'description'   => 'Arraste suas widgets para cá',
