@@ -62,11 +62,13 @@ if(class_exists('WooCommerce')) {
   require get_template_directory() . '/inc/wc-modifications.php';
 }
 
-/**
- * Show cart contents / total Ajax
- */
-add_filter('woocommerce_add_to_cart_fragments', 'todxs_loja_woocommerce_header_add_to_cart_fragment');
 
+
+require_once get_template_directory() . '/inc/register-sidebars.php';
+require_once get_template_directory() . '/inc/wc-show-percentage.php';
+
+// Show cart contents / total Ajax
+add_filter('woocommerce_add_to_cart_fragments', 'todxs_loja_woocommerce_header_add_to_cart_fragment');
 function todxs_loja_woocommerce_header_add_to_cart_fragment($fragments) {
 	global $woocommerce;
 
@@ -78,9 +80,6 @@ function todxs_loja_woocommerce_header_add_to_cart_fragment($fragments) {
 	$fragments['span.items'] = ob_get_clean();
 	return $fragments;
 }
-
-require_once get_template_directory() . '/inc/register-sidebars.php';
-require_once get_template_directory() . '/inc/wc-show-percentage.php';
 
 // query out of stock products by last
 add_filter('posts_clauses', 'order_by_stock_status');
