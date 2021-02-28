@@ -19,7 +19,7 @@ function todxs_loja_wc_modify() {
   if(is_shop()) {
     add_action('woocommerce_before_main_content', 'todxs_loja_add_sidebar_tags', 6);
     function todxs_loja_add_sidebar_tags() {
-      echo '<div class="sidebar-shop col-lg-3 col-md-4 order-2 order-md-1">';
+      echo '<div class="col-12 col-md-3 col-lg-2 order-2 order-md-1 sidebar-shop">';
     }
     
     // sidebar - add
@@ -35,7 +35,7 @@ function todxs_loja_wc_modify() {
   add_action('woocommerce_before_main_content', 'todxs_loja_add_shop_tags', 9);
   function todxs_loja_add_shop_tags() {
     if(is_shop()) {
-      echo '<div class="col-lg-9 col-md-8 order-1 order-md-2">';
+      echo '<div class="col-12 col-md-9 col-lg-10 order-1 order-md-2">';
     } else {
       echo '<div class="col">';
     }
@@ -48,7 +48,7 @@ function todxs_loja_wc_modify() {
   }
   
   // show product short description
-  add_action('woocommerce_after_shop_loop_item_title', 'the_excerpt', 1);
+  // add_action('woocommerce_after_shop_loop_item_title', 'the_excerpt', 1);
 
   // filter example - remove store title
   // add_filter('woocommerce_show_page_title', 'todxs_loja_remove_shop_title');
