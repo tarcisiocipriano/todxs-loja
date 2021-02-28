@@ -16,7 +16,15 @@
             </div>
             <?php if(has_post_thumbnail()): the_post_thumbnail('todxs-loja-blog', array('class' => 'img-fluid')); endif; ?>
           </header>
-          <div><?php the_content(); ?></div>
+          <div>
+            <?php
+              wp_link_pages(array(
+                'before' => '<p class="inner-pagination">' . 'Páginas',
+                'after'  => '</p>'
+              ));
+            ?>
+            <?php the_content(); ?>
+          </div>
         </article>
       <?php if(comments_open() || get_comments_number()): ?>
         <div class="col-12"><?php comments_template(); ?></div>
