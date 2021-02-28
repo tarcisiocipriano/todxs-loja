@@ -1,0 +1,33 @@
+$badge-height: 30px;
+$badge-cut: 10px;
+
+.woocommerce  {
+  span.onsale {
+    font-size: .84em;
+    min-height: auto;
+    padding: .72em .8em .72em .72em;
+    background-color: $purple400;
+    border-radius: 0;
+
+    line-height: 1;
+
+    top: 0;
+    left: 0;
+
+    transform-origin: top left;
+    transform: rotate(90deg) translateY(-100%);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: $badge-cut;
+      height: 100%;
+      border-width: 1.2em .8em 1.2em 0;
+      border-color: $purple400 transparent;
+      border-style: solid;
+      transform: translateX(100%);
+    }
+  }
+}
