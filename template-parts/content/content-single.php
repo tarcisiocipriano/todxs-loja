@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" class="col-12" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header>
     <h1><?php the_title(); ?></h1>
     <div>
