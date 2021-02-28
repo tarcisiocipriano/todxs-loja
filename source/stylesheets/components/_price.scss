@@ -1,0 +1,44 @@
+%price {
+  margin: 0;
+  padding-top: .875rem;
+  
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: $green500;
+
+  position: relative;
+
+  @include atLarge {
+    font-size: 1.5rem;
+  }
+
+  del {
+    font-size: .875rem;
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    color: $grey5;
+  }
+  ins {
+    text-decoration: none;
+  }
+}
+
+.woocommerce  {
+  
+  ul.products {
+    li.product {
+      span.price {
+        @extend %price;
+      }
+    }
+  }
+
+  div.product {
+    p.price {
+      @extend %price;
+    }
+  }
+  
+}
