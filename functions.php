@@ -79,6 +79,19 @@ function todxs_loja_woocommerce_header_add_to_cart_fragment($fragments) {
 	return $fragments;
 }
 
+// query out of stock products by last
+add_filter('posts_clauses', 'order_by_stock_status');
+function order_by_stock_status($posts_clauses) {
+  global $wpdb;
+  // only change query on WooCommerce loops
+  if (is_woocommerce() && (is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy())) {
+    $posts_clauses['join'] .= " INNER JOIN $wpdb->postmeta istockstatus ON ($wpdb->posts.ID = istockstatus.post_id) ";
+    $posts_clauses['orderby'] = " istockstatus.meta_value ASC, " . $posts_clauses['orderby'];
+    $posts_clauses['where'] = " AND istockstatus.meta_key = '_stock_status' AND istockstatus.meta_value <> '' " . $posts_clauses['where'];
+  }
+  return $posts_clauses;
+}
+
 add_action('widgets_init', 'todxs_loja_sidebars');
 function todxs_loja_sidebars() {
   register_sidebar(array(
