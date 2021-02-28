@@ -18,7 +18,9 @@
           </header>
           <div><?php the_content(); ?></div>
         </article>
-      <?php endwhile; ?>
+      <?php if(comments_open() || get_comments_number()): ?>
+        <div class="col-12"><?php comments_template(); ?></div>
+      <?php endif; endwhile; ?>
       
     </div>
   </div>
