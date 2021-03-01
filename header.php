@@ -10,85 +10,41 @@
 <body <?php body_class(); ?>>
   <div id="page" class="site">
 
-    <header>
+    <header class="header">
 
-      <section class="search">
-        <?php echo class_exists('WooCommerce') ? do_shortcode('[wcas-search-form]') : get_search_form(); ?>
-      </section>
-
-      <section class="top-bar">
+      <section class="header__nav-top">
         <div class="container">
-          <div class="row">
-            <div class="brand col-12 col-md-3 col-lg-2 text-center text-md-left">
-              <a href="<?php echo home_url('/'); ?>">
-                <?php if(has_custom_logo()): ?>
-                  <?php the_custom_logo(); ?>
-                <?php else: ?>
-                  <p class="site-title"><?php bloginfo('title'); ?></p>
-                  <span><?php bloginfo('description'); ?></span>
-                <?php endif; ?>
-              </a>
-            </div>
-            <div class="second-column col-12 col-md-9 col-lg-10">
-              <div class="row">
-                <?php if(class_exists('WooCommerce')): ?>
-                  <div class="account col-12">
-                    <div class="navbar-expand">
-                      <ul class="navbar-nav float-left">
-                        <?php $my_account_page_id = get_permalink(get_option('woocommerce_myaccount_page_id'));
-                          if(is_user_logged_in()): ?>
-                          <li>
-                            <a href="<?php echo esc_url($my_account_page_id); ?>" class="nav-link">Minha conta</a>
-                          </li>
-                          <li>
-                            <a href="<?php echo esc_url(wp_logout_url($my_account_page_id)); ?>" class="nav-link">Sair</a>
-                          </li>
-                        <?php else: ?>
-                          <li>
-                            <a href="<?php echo esc_url($my_account_page_id); ?>" class="nav-link">Entrar / Criar conta</a>
-                          </li>
-                        <?php endif; ?>
-                      </ul>
-                    </div>
-                    <div class="cart text-right">
-                      <a href="<?php echo wc_get_cart_url(); ?>"><i class="fas fa-shopping-cart"></i></a>
-                      <span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-                    </div>
-                  </div>
-                <?php endif; ?>
-                <div class="col-12">
-                  <nav class="main-menu navbar navbar-expand-md navbar-light" role="navigation">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <button
-                      class="navbar-toggler ml-auto"
-                      type="button"
-                      data-toggle="collapse"
-                      data-target="#bs-example-navbar-collapse-1"
-                      aria-controls="bs-example-navbar-collapse-1"
-                      aria-expanded="false"
-                      aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                      <?php
-                        wp_nav_menu( array(
-                          'theme_location'    => 'todxs_loja_main_menu',
-                          'depth'             => 3,
-                          'container'         => 'div',
-                          'container_class'   => 'collapse navbar-collapse',
-                          'container_id'      => 'bs-example-navbar-collapse-1',
-                          'menu_class'        => 'nav navbar-nav',
-                          'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-                          'walker'            => new WP_Bootstrap_Navwalker(),
-                        ) );
-                      ?>
-                  </nav>
-                </div> <!-- col-12 -->
-              </div> <!-- row -->
-            </div> <!-- second-column -->
-          </div> <!-- row -->
-          <?php if(is_active_sidebar('todxs-loja-sidebar-header')): ?>
-            <?php dynamic_sidebar('todxs-loja-sidebar-header'); ?>
-          <?php endif; ?>
-        </div> <!-- container -->
+          <span>(81) 00000-0000</span>
+          <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+          </ul>
+        </div>
       </section>
-    </header>
+
+      <section class="header__main-nav">
+        <div class="container">
+          <button class="header__burguer-button"><i class="fas fa-bars"></i></button>
+          <div class="header__logo">
+            <?php get_template_part('template-parts/header/logo'); ?>
+          </div>
+          <div class="header__acount">
+            <?php get_template_part('template-parts/header/account'); ?>
+          </div>
+          <div class="header__cart">
+            <?php get_template_part('template-parts/header/cart'); ?>
+          </div>
+          <div class="header__search">
+            <?php echo class_exists('WooCommerce') ? do_shortcode('[wcas-search-form]') : get_search_form(); ?>
+          </div>
+        </div>
+      </section>
+      
+      <section class="header__nav">
+        <div class="container">
+          <?php if(is_active_sidebar('todxs-loja-sidebar-header')): dynamic_sidebar('todxs-loja-sidebar-header'); endif;?>
+        </div>
+        <?php get_template_part('template-parts/header/nav'); ?>
+      </section>
