@@ -48,3 +48,5 @@
           <?php if(is_active_sidebar('todxs-loja-sidebar-header')): dynamic_sidebar('todxs-loja-sidebar-header'); endif;?>
         </div>
       </section>
+
+    </header>

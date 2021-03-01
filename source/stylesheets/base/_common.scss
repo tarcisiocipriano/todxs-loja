@@ -1,5 +1,10 @@
 body {
   background-color: $gray1;
+  position: relative;
+  min-height: 100vh;
+  .site {
+    padding-bottom: 200px;
+  }
 
   &:not(.archive) .shop-content {
     background-color: $white;
