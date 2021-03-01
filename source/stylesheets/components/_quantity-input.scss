@@ -5,7 +5,7 @@ div.qib-container:not(#qib_id):not(#qib_id) {
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid grey;
+  border: 1px solid $gray3;
   border-radius: 20px;
   text-align: center;
 
@@ -23,6 +23,7 @@ div.qib-container:not(#qib_id):not(#qib_id) {
     height: 30px;
   }
   input.qty:not(#qib_id):not(#qib_id) {
+    color: $black;
     border: none;
     width: 90px;
     height: 40px;
