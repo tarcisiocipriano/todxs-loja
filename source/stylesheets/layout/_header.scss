@@ -1,0 +1,107 @@
+.header {
+  // -------------------- header__nav-top --------------------
+  &__nav-top{
+    background-color: $purple500;
+    padding: 8px 0;
+    color: $white;
+  
+    .container {
+      display: flex;
+      justify-content: space-between;
+  
+      span {
+        display: block;
+      }
+      
+      ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+      }
+  
+    }
+  }
+  
+  // -------------------- header__main-nav --------------------
+  &__main-nav {
+    padding: 20px 0;
+    background-color: $purple400;
+    .container {
+      display: grid;
+      grid-template-columns: 40px 1fr 40px;
+      grid-template-rows: 1fr 1fr;
+      row-gap: 8px;
+      @include atLarge {
+        grid-template-columns: 100px 1fr 200px 40px;
+        grid-template-rows: 1fr;
+        column-gap: 24px;
+      }
+    }
+    a {
+      // color: $white;
+    }
+  }
+  &__burguer-button {
+    background-color: transparent;
+    border: none;
+    color: $white;
+    font-size: 1.5rem;
+    grid-column: 1 / 2;
+  }
+  &__logo {
+    grid-column: 2 / 3;
+    text-align: center;
+  }
+  &__acount {
+    display: none;
+  }
+  &__cart {
+    grid-column: 3 / 4;
+  }
+  &__search {
+    grid-column: 1 / 4;
+    @extend %advanced-search-input;
+  }
+
+  @include atLarge {
+    &__burguer-button {
+      display: none;
+    }
+    &__logo {
+      grid-column: 1 / 2;
+      text-align: left;
+    }
+    &__acount {
+      grid-column: 3 / 4;
+      display: block;
+    }
+    &__cart {
+      grid-column: 4 / 5;
+    }
+    &__search {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+  }
+  
+  // -------------------- header__nav --------------------
+  &__nav {
+    background-color: $white;
+    padding: 8px 0;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .1);
+    .container {
+      ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+%advanced-search-input {
+  .dgwt-wcas-search-wrapp {
+    max-width: 100%;
+  }
+}
