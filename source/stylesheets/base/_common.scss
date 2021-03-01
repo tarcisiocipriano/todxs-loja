@@ -1,3 +1,14 @@
 body {
-  background-color: #f3f3f3;
+  background-color: $gray1;
+
+  &:not(.archive) .shop-content {
+    background-color: $white;
+  }
+
+  &:not(.home) .content-area {
+    padding-top: 16px;
+    @include atLarge {
+      padding-top: 32px;
+    }
+  }
 }
