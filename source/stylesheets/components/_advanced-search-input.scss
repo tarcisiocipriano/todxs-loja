@@ -1,0 +1,123 @@
+$search-form-height-small: 32px;
+$search-form-height-large: 40px;
+
+// search container
+div.dgwt-wcas-search-wrapp {
+
+  // input
+  .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input {
+    height: $search-form-height-small;
+    font-size: 16px;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 50px 10px 15px;
+
+    @include atLarge {
+      height: $search-form-height-large;
+    }
+  }
+
+  // search button
+  .dgwt-wcas-search-submit {
+    min-width: $search-form-height-small;
+    height: $search-form-height-small;
+    padding: 0;
+    margin-right: 12px;
+    background-color: transparent;
+    background-image: url("../assets/icons/search.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+
+    @include atLarge {
+      min-width: $search-form-height-large;
+      height: $search-form-height-large;
+      background-size: 24px;
+    }
+
+    &:hover, &:focus {
+      opacity: 1;
+    }
+
+    svg {
+      display: none;
+    }
+    &::before {
+      content: none;
+    }
+  }
+}
+
+// suggestions container
+div.dgwt-wcas-suggestions-wrapp {
+  padding: 16px 0;
+  border: none;
+  border-top: 1px solid $gray5;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .1);
+  overflow: visible;
+
+  // item
+  .dgwt-wcas-suggestion.dgwt-wcas-suggestion-product {
+    padding: 8px 16px
+  }
+
+  // title
+  .dgwt-wcas-st {
+    .dgwt-wcas-st-title {
+      strong {
+        font-weight: 400;
+        text-decoration: none;
+      }
+    }
+  }
+
+  // button see more
+  .dgwt-wcas-suggestion.dgwt-wcas-suggestion-more {
+    padding: 12px 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: none;
+    justify-content: flex-start;
+    color: $purple400;
+  }
+
+  // no results
+  .dgwt-wcas-suggestion.dgwt-wcas-suggestion-nores {
+    padding: 12px 8px;
+    opacity: 1;
+    .dgwt-wcas-st {
+      padding: 0 12px;
+      font-size: 16px;
+      text-transform: none;
+    }
+  }
+
+  // details
+  &::before, &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -16px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 16px 0 0 16px;
+    border-color: transparent transparent transparent $white;
+    z-index: 1;
+    @include atLarge {
+      top: -20px;
+      border-width: 20px 0 0 20px;
+    }
+  }
+  &::after {
+    left: unset;
+    right: 0;
+    border-width: 0 0 16px 16px;
+    border-color: transparent transparent $white transparent;
+    @include atLarge {
+      border-width: 0 0 20px 20px;
+    }
+  }
+}
