@@ -2,9 +2,10 @@
   background-color: $green500;
   color: #fff;
   border-radius: 20px;
-  &:hover {
+  &:focus, &:hover {
     background-color: $green600;
     color: #fff;
+    outline: none !important;
   }
 }
 
@@ -24,6 +25,11 @@
   
   // button in single-product.php
   button.button.alt {
+    @extend %button;
+  }
+
+  // button proceed to checkout
+  .wc-proceed-to-checkout a.checkout-button {
     @extend %button;
   }
 }

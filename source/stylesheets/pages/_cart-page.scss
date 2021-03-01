@@ -1,5 +1,14 @@
 .woocommerce-cart.woocommerce-page {
-
+  .input-text {
+    min-width: 160px;
+    min-height: 40px;
+    width: 200px;
+  }
+  button.button {
+    background-color: #fff;
+    color: $green600;
+    border: 2px solid $green600;
+  }
 }
 
 table.shop_table {
