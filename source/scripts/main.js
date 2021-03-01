@@ -1,4 +1,4 @@
-$('.slick-carousel').slick({
+jQuery('.slick-carousel').slick({
   dots: true,
   arrows: false,
   infinite: true,

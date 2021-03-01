@@ -9,9 +9,9 @@ if(class_exists('WooCommerce')) {
 }
 
 function todxs_loja_scripts() {
-  // wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), null, true);
+  wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), null, true);
   wp_enqueue_script('todxs_loja_script_vendors', get_template_directory_uri() . '/scripts/vendors.js', array(), '1.0', true);
-  wp_enqueue_script('todxs_loja_script_main', get_template_directory_uri() . '/scripts/main.js', array(), '1.0', true);
+  wp_enqueue_script('todxs_loja_script_main', get_template_directory_uri() . '/scripts/main.js', array('jquery'), '1.0', true);
   wp_enqueue_style('todxs_loja_style', get_template_directory_uri() . '/stylesheets/main.css', array(), '1.0', 'all');
   wp_enqueue_style('google_fonts', 'https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Seaweed+Script');
 }
@@ -69,9 +69,9 @@ function todxs_loja_woocommerce_header_add_to_cart_fragment($fragments) {
 	ob_start();
 
 	?>
-	<span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+	<span class="cart-items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
 	<?php
-	$fragments['span.items'] = ob_get_clean();
+	$fragments['span.cart-items'] = ob_get_clean();
 	return $fragments;
 }
 
