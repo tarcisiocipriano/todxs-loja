@@ -4,6 +4,11 @@
     background-color: $purple500;
     padding: 8px 0;
     color: $white;
+    display: none;
+
+    @include atLarge {
+      display: block;
+    }
   
     .container {
       display: flex;
@@ -24,8 +29,11 @@
   
   // -------------------- header__main-nav --------------------
   &__main-nav {
-    padding: 20px 0;
+    padding: 8px 0;
     background-color: $purple400;
+    @include atLarge {
+      padding: 20px 0;
+    }
     .container {
       display: grid;
       grid-template-columns: 40px 1fr 40px;
@@ -35,10 +43,8 @@
         grid-template-columns: 100px 1fr 200px 40px;
         grid-template-rows: 1fr;
         column-gap: 24px;
+        align-items: center;
       }
-    }
-    a {
-      // color: $white;
     }
   }
   &__burguer-button {
@@ -53,6 +59,11 @@
     text-align: center;
   }
   &__acount {
+    a {
+      color: $white;
+      text-transform: capitalize;
+      font-weight: 600;
+    }
     display: none;
   }
   &__cart {

@@ -4,6 +4,7 @@
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
   <?php wp_head(); ?>
 </head>
@@ -46,5 +47,4 @@
         <div class="container">
           <?php if(is_active_sidebar('todxs-loja-sidebar-header')): dynamic_sidebar('todxs-loja-sidebar-header'); endif;?>
         </div>
-        <?php get_template_part('template-parts/header/nav'); ?>
       </section>
