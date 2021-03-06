@@ -3,6 +3,7 @@ $badge-cut: 10px;
 
 .woocommerce  {
   span.onsale {
+    z-index: 1;
     font-size: .84em;
     min-height: auto;
     padding: .72em .8em .72em .72em;

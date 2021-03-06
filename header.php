@@ -44,7 +44,11 @@
       </section>
       
       <section class="header__nav">
-        <div class="container">
+        <div class="container categories-container show">
+          <div class="header__nav-mobile-header">
+            <h2>Olá</h2>
+            <button class="header__close-button"><i class="fas fa-times"></i></button>
+          </div>
           <?php if(is_active_sidebar('todxs-loja-sidebar-header')): dynamic_sidebar('todxs-loja-sidebar-header'); endif;?>
         </div>
       </section>

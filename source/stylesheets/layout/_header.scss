@@ -2,28 +2,20 @@
   // -------------------- header__nav-top --------------------
   &__nav-top{
     background-color: $purple500;
-    padding: 8px 0;
+    padding: 4px 0;
     color: $white;
     display: none;
-
-    @include atLarge {
-      display: block;
-    }
-  
+    @include atLarge { display: block; }
     .container {
       display: flex;
       justify-content: space-between;
-  
-      span {
-        display: block;
-      }
-      
+      span { display: block; }
       ul {
         display: flex;
         list-style: none;
         margin: 0;
+        li { margin-left: .5em; }
       }
-  
     }
   }
   
@@ -31,9 +23,7 @@
   &__main-nav {
     padding: 8px 0;
     background-color: $purple400;
-    @include atLarge {
-      padding: 20px 0;
-    }
+    @include atLarge { padding: 30px 0; }
     .container {
       display: grid;
       grid-template-columns: 40px 1fr 40px;
@@ -48,11 +38,11 @@
     }
   }
   &__burguer-button {
-    background-color: transparent;
-    border: none;
+    @extend %button-unstyled;
     color: $white;
     font-size: 1.5rem;
     grid-column: 1 / 2;
+    text-align: left;
   }
   &__logo {
     grid-column: 2 / 3;
@@ -68,6 +58,10 @@
   }
   &__cart {
     grid-column: 3 / 4;
+    .cart-button {
+      font-size: 1.25rem;
+      justify-content: flex-start;
+    }
   }
   &__search {
     grid-column: 1 / 4;
@@ -88,6 +82,9 @@
     }
     &__cart {
       grid-column: 4 / 5;
+      .cart-button {
+        font-size: 1.5rem;
+      }
     }
     &__search {
       grid-column: 2 / 3;
@@ -98,18 +95,94 @@
   // -------------------- header__nav --------------------
   &__nav {
     background-color: $white;
-    padding: 8px 0;
-    border-bottom: 1px solid $gray2;
-    z-index: 1000;
-    .container {
-      ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+    left: -100%;
+    transition: left .2s;
+    &.show { left: 0; }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      ul { padding-left: 20px; }
+      li {
+        a {
+          text-decoration: none;
+          color: $purple400;
+          font-weight: 500;
+        }
       }
     }
-  }
+
+    &-mobile-header {
+      padding: 20px 28px;
+      display: flex;
+      justify-content: space-between;
+      background-color: $purple400;
+      color: $white;
+      h2 { margin: 0 ;}
+      @include atLarge { display: none; }
+      .header__close-button {
+        @extend %button-unstyled;
+        color: $white;
+        font-size: 1.5rem;
+      }
+    }
+    
+    @include untilLarge {
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      position: fixed;
+      top: 0;
+      .container { padding: 0; }
+      ul {
+        padding: 0 28px;
+        li {
+          border-top: 1px solid $gray2;
+          a {
+            padding: .75em 0;
+            display: block;
+          }
+          ul { padding-right: 0; }
+        }
+      }
+    }
+
+    @include atLarge {
+      border-bottom: 1px solid $gray2;
+      .container {
+        ul {
+          display: flex;
+          padding: 0;
+          li {
+            position: relative;
+            a {
+              display: block;
+              padding: .5em .75em;
+            }
+            &:focus ul, &:hover ul {
+              display: block;
+            }
+            ul {
+              display: block;
+              border: 1px solid $gray2;
+              border-top: none;
+              border-radius: 0 0 8px 8px;
+              background-color: $white;
+              position: absolute;
+              display: none;
+              z-index: 1;
+              a {
+                white-space: nowrap;
+                padding: .5em 1.5em;
+                margin: 0;
+              }
+            } // ul
+          } // li
+        } // ul
+      } // container
+    } // atLarge
+  } // &__nav
 }
 
 %advanced-search-input {
