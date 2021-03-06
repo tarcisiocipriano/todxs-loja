@@ -41,8 +41,6 @@
       grid-template-columns: repeat(12, 1fr);
     }
     
-    
-
     #billing,
     #shipping {
       &_first_name_field {
@@ -148,6 +146,24 @@
 
     @include atLarge {
       grid-template-columns: 50% auto;
+    }
+  }
+
+  .woocommerce-checkout-review-order table.shop_table {
+    tfoot {
+      padding: 12px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+      row-gap: 16px;
+
+      th, td { border: none; padding: 0; }
+      th { font-size: 1.5rem; }
+      td { color: $gray5; }
+      tr {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 

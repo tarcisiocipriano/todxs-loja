@@ -18,13 +18,12 @@
   @extend %card;
 }
 
-// checkout table
-.woocommerce-checkout-review-order table.shop_table {
+// order table details base
+.woocommerce-checkout-review-order table.shop_table,
+.woocommerce-order-received table.shop_table {
   @extend %card;
   border: none;
-  td {
-    border: none;
-  }
+  td { border: none; }
   thead, tbody {
     tr {
       display: flex;
@@ -37,36 +36,6 @@
     }
     td {
       padding: 4px 12px;
-    }
-  }
-  tfoot {
-    padding: 12px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
-    row-gap: 16px;
-
-    th, td { border: none; padding: 0; }
-    th { font-size: 1.52rem; }
-    td { color: $gray5; }
-    tr {
-      display: flex;
-      flex-direction: column;
-    }
-    .cart-subtotal {
-      grid-column: 1 / 2;
-    }
-    .shipping {
-      grid-column: 1 / 2;
-    }
-    .order-total {
-      grid-column: 2 / 3;
-      grid-row: 1 / 3;
-      align-items: flex-end;
-      td {
-        color: $green600;
-        font-size: 2rem;
-      }
     }
   }
 }
