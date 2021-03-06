@@ -118,9 +118,7 @@ table.shop_table {
   button.button {
     grid-column: 2 / 3;
     min-width: 100%;
-    background-color: #fff;
-    color: $green600;
-    border: 2px solid $green600;
+    @extend %button-outline;
   }
 }
 

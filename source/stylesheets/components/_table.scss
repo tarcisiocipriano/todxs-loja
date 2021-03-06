@@ -22,7 +22,6 @@
 .woocommerce-checkout-review-order table.shop_table,
 .woocommerce-order-received table.shop_table {
   @extend %card;
-  border: none;
   td { border: none; }
   thead, tbody {
     tr {

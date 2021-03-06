@@ -2,10 +2,24 @@
   background-color: $green500;
   color: #fff;
   border-radius: 20px;
+  transition: background-color .2s, color .2s, border-color .2s !important;
   &:focus, &:hover {
     background-color: $green600;
     color: #fff;
     outline: none !important;
+  }
+}
+
+%button-outline {
+  background-color: #fff;
+  color: $green600;
+  border-radius: 20px;
+  border: 2px solid $green600;
+  transition: background-color .2s, color .2s, border-color .2s;
+  &:focus, &:hover {
+    background-color: $green100;
+    color: $green700;
+    border: 2px solid $green700;
   }
 }
 

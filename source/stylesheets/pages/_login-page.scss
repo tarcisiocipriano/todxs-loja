@@ -1,0 +1,72 @@
+.woocommerce-account {
+
+  // resets
+  .col2-set {
+    width: 100%;
+    display: grid;
+    
+    @include atMedium {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 16px;
+    }
+  }
+  .woocommerce {
+    &::before, &::after {
+      content: none;
+    }
+    .col-1, .col-2 {
+      float: none;
+      width: 100%;
+      flex: 1 1 100%;
+      max-width: none;
+    }
+    .woocommerce-form-login .woocommerce-form-login__submit {
+      margin: 0;
+    }
+  }
+
+  // styles
+  .woocommerce {
+    & form.login,
+    & form.register {
+      @extend %card;
+      display: grid;
+      row-gap: 20px;
+      align-items: center;
+      p {
+        margin: 0;
+      }
+      
+    }
+  
+    & form.login {
+      .form-row:nth-child(3) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &::before, &::after {
+          content: none;
+        }
+        button {
+          @extend %button;
+        }
+      }
+      .lost_password {
+        text-align: center;
+      }
+    }
+  
+    & form.register {
+      .woocommerce-privacy-policy-text {
+        display: none;
+      }
+      .form-row:nth-child(5) {
+        text-align: right;
+        button {
+          @extend %button-outline;
+        }
+      }
+    }
+  }
+
+}
