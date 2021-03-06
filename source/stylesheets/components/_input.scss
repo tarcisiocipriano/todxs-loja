@@ -1,0 +1,21 @@
+.woocommerce {
+  input:not(.woocommerce-form__input-checkbox):not(.shipping_method) {
+    padding: 8px 8px;
+    border: 1px solid $gray3;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  form .form-row.woocommerce-validated input.input-text {
+    border-color: $green300;
+  }
+
+  form .form-row.woocommerce-invalid input.input-text {
+    border-color: $red400;
+  }
+
+  form .form-row.woocommerce-invalid label {
+    color: $red400;
+  }
+  
+}

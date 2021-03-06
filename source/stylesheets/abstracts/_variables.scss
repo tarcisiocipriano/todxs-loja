@@ -1,3 +1,11 @@
+$pink500: #ec59ff;
+$pink100: lighten( $pink500, 30% );
+$pink200: lighten( $pink500, 25% );
+$pink300: lighten( $pink500, 20% );
+$pink400: lighten( $pink500, 10% );
+$pink600: darken( $pink500, 10% );
+$pink700: darken( $pink500, 20% );
+
 $red500: #FF595E;
 $red100: lighten( $red500, 30% );
 $red200: lighten( $red500, 25% );

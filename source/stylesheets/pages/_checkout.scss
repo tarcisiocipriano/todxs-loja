@@ -1,0 +1,154 @@
+.woocommerce-checkout.woocommerce-page {
+  .col2-set {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col-1, .col-2 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .form-row {
+    padding: 0;
+    margin: 0;
+    &-first, &-last { width: 100%; }
+    label {
+      margin-bottom: .25em;
+      font-weight: 600;
+      color: $purple400;
+      line-height: 1;
+    }
+    .optional {
+      font-weight: 400;
+    }
+    font-weight: 400;
+    .required {
+      color: $purple100;
+    }
+  }
+
+  .woocommerce-billing-fields__field-wrapper,
+  .woocommerce-shipping-fields__field-wrapper {
+    @extend %card;
+    display: grid;
+    
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 16px;
+    row-gap: 20px;
+    
+    @include atMedium {
+      grid-template-columns: repeat(12, 1fr);
+    }
+    
+    
+
+    #billing,
+    #shipping {
+      &_first_name_field {
+        grid-column: 1 / 3;
+      }
+      &_last_name_field {
+        grid-column: 3 / 5;
+      }
+      &_cpf_field {
+        grid-column: 1 / 5;
+      }
+      &_company_field {
+        display: none;
+      }
+      &_country_field {
+        grid-column: 1 / 5;
+      }
+      &_postcode_field {
+        grid-column: 1 / 5;
+      }
+      &_address_1_field {
+        grid-column: 1 / 5;
+      }
+      &_number_field {
+        grid-column: 1 / 2;
+      }
+      &_address_2_field {
+        grid-column: 2 / 5;
+      }
+      &_neighborhood_field {
+        grid-column: 1 / 5;
+      }
+      &_city_field {
+        grid-column: 1 / 5;
+      }
+      &_state_field {
+        grid-column: 1 / 5;
+      }
+      &_phone_field {
+        grid-column: 1 / 5;
+      }
+      &_email_field {
+        grid-column: 1 / 5;
+      }
+
+      @include atMedium {
+        &_first_name_field {
+          grid-column: 1 / 5;
+        }
+        &_last_name_field {
+          grid-column: 5 / 9;
+        }
+        &_cpf_field {
+          grid-column: 9 / 13;
+        }
+        &_country_field {
+          grid-column: 1 / 3;
+        }
+        &_postcode_field {
+          grid-column: 3 / 5;
+        }
+        &_address_1_field {
+          grid-column: 5 / 8;
+        }
+        &_number_field {
+          grid-column: 8 / 9;
+        }
+        &_address_2_field {
+          grid-column: 9 / 13;
+        }
+        &_neighborhood_field {
+          grid-column: 1 / 5;
+        }
+        &_city_field {
+          grid-column: 5 / 9;
+        }
+        &_state_field {
+          grid-column: 9 / 13;
+        }
+        &_phone_field {
+          grid-column: 1 / 7;
+        }
+        &_email_field {
+          grid-column: 7 / 13;
+        }
+      }
+      
+    }
+  }
+
+  .woocommerce-account-fields .create-account {
+    @extend %card;
+  }
+  
+  
+  .woocommerce-additional-fields__field-wrapper {
+    @extend %card;
+  }
+
+  .woocommerce-checkout-review-order {
+    display: grid;
+    column-gap: 16px;
+
+    @include atLarge {
+      grid-template-columns: 50% auto;
+    }
+  }
+
+}
