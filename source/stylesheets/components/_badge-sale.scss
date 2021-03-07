@@ -1,37 +1,43 @@
 $badge-height: 30px;
 $badge-cut: 10px;
 
+%onsale {
+  min-height: auto;
+  padding: .72em .8em .72em .72em;
+  border-radius: 0;
+  background-color: $purple400;
+  font-size: .84em;
+  font-weight: 700;
+  line-height: 1;
+  color: $white;
+  z-index: 1;
+  
+  &::before {
+    content: '';
+    border-width: .38em .34em;
+    border-color: $purple500 $purple500 transparent transparent;
+    border-style: solid;
+    position: absolute;
+    top: 2.4em;
+    left: -.01em;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 1px;
+    width: $badge-cut;
+    height: 100%;
+    border-width: 1.2em .8em 1.2em 0;
+    border-color: $purple400 transparent;
+    border-style: solid;
+    transform: translateX(100%);
+  }
+}
+
 .woocommerce  {
   span.onsale {
-    z-index: 1;
-    font-size: .84em;
-    min-height: auto;
-    padding: .72em .8em .72em .72em;
-    background-color: $purple400;
-    border-radius: 0;
-    line-height: 1;
-    
-    &::before {
-      content: '';
-      border-width: .38em .34em;
-      border-color: $purple500 $purple500 transparent transparent;
-      border-style: solid;
-      position: absolute;
-      top: 2.4em;
-      left: -.01em;
-    }
-    
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 1px;
-      width: $badge-cut;
-      height: 100%;
-      border-width: 1.2em .8em 1.2em 0;
-      border-color: $purple400 transparent;
-      border-style: solid;
-      transform: translateX(100%);
-    }
+    @extend %onsale
   }
 }

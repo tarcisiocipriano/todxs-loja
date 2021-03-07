@@ -9,6 +9,38 @@ jQuery('.slick-carousel').slick({
   cssEase: 'linear',
 });
 
+jQuery('.slick-popular').slick({
+  infinite: true,
+  slidesToShow: 5,
+  touchMove: false,
+  // slidesToScroll: 5,
+  arrows: true,
+  dots: false,
+  responsive: [
+    {
+      breakpoint: 993,
+      settings: {
+        slidesToShow: 4,
+        // slidesToScroll: 4,
+      }
+    },
+    {
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 3,
+        // slidesToScroll: 3
+      }
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 2,
+        // slidesToScroll: 2
+      }
+    }
+  ]
+});
+
 jQuery('.header__burguer-button').click( function() {
   jQuery('.header__nav').addClass('show');
   jQuery("body").css("overflow", "hidden");

@@ -1,0 +1,78 @@
+.slick-popular {
+  margin: 0 -10px;
+
+  *:focus, *:hover {
+    outline: none;
+    text-decoration: none;
+  }
+
+  li.product {
+    margin: 0 8px 16px;
+    height: 100%;
+    position: relative;
+
+    @extend %product-card-container;
+
+    @include atLarge {
+      margin-bottom: $card-padding-desktop*3.2 !important;
+      &:focus, &:hover {
+        margin-bottom: 0 !important;
+        padding-bottom: $card-padding-desktop*2.4;
+        a.button {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  // card link
+  a.woocommerce-LoopProduct-link {
+    @extend %product-card-link;
+  }
+  
+  // title
+  h2.woocommerce-loop-product__title {
+    @extend %product-cart-title;
+  }
+
+  // button
+  .add_to_cart_button,
+  .product_type_grouped,
+  .product_type_external {
+    @extend %button;
+    font-weight: 700;
+    text-align: center;
+    padding: 6px 0;
+    
+    @extend %product-card-button;
+
+    &.added::after {
+      font-family: "WooCommerce";
+      content: "\e017";
+      margin-left: .53em;
+      vertical-align: bottom;
+    }
+  }
+
+  // button go-to-cart
+  a.added_to_cart { display: none; }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+  }
+
+  .price {
+    @extend %price;
+    display: block;
+  }
+
+  .onsale {
+    position: absolute;
+    @extend %onsale;
+    @extend %product-card-badge-onsale;
+  }
+
+}

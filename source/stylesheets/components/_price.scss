@@ -14,11 +14,12 @@
   }
 
   del {
+    opacity: 1;
     font-size: .875rem;
     font-weight: 500;
     position: absolute;
     top: 0;
-    color: $gray5;
+    color: $gray3;
   }
   ins {
     text-decoration: none;
