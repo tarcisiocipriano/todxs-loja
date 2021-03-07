@@ -20,8 +20,8 @@ add_action('wp_enqueue_scripts', 'todxs_loja_scripts');
 function todxs_loja_config() {
   register_nav_menus(
     array(
-      'todxs_loja_main_menu' => 'Todxs Loja Main Menu',
-      'todxs_loja_footer_menu' => 'Todxs Loja Footer Menu'
+      'todxs_loja_main_menu' => 'Todxs Loja - Main Menu',
+      'todxs_loja_nav_top_menu' => 'Todxs Loja - Nav Top Menu'
     )
   );
 

@@ -16,12 +16,11 @@
       <section class="header__nav-top">
         <div class="container">
           <span>(81) 00000-0000</span>
-          <ul>
-            <li>menu1</li>
-            <li>menu2</li>
-            <li>menu3</li>
-            <li>menu4</li>
-          </ul>
+          <?php
+            wp_nav_menu(array(
+              'theme_location' => 'todxs_loja_nav_top_menu'
+            ));
+          ?>
         </div>
       </section>
 
