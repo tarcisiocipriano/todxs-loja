@@ -7,17 +7,9 @@ body {
   font-family: 'Rajdhani', sans-serif;
 }
 
-// .popular-products,
-// .new-arrivals,
-// .deal-of-the-week,
-// .store-blog {
-//   h1, h2, h3 {
-//     font-family: 'Indie Flower', cursive;
-//     color: $purple400;
-//     font-size: 2rem;
-    
-//     @include atMedium {
-//       font-size: 3rem;
-//     }
-//   }
-// }
+@mixin indieFont($size, $color: $purple400) {
+  font-family: 'Indie Flower', cursive;
+  font-size: $size;
+  line-height: 1.2;
+  color: $color;
+}

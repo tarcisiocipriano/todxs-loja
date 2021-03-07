@@ -1,22 +1,68 @@
 .woocommerce.single-product {
+
+  h1 {
+    @include indieFont(2rem);
+    @include atLarge {
+      @include indieFont(3rem);
+    }
+  }
+
+  .woocommerce-product-gallery {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
   .shop-content {
     span.onsale {
       top: 16px;
+      left: -8px;
       transition: font-size .1s;
-  
+      
       @include atSmall {
         font-size: 1.1rem;
+        left: -11px;
       }
       
       @include atMedium {
         font-size: 1.25rem;
         top: 32px;
-        left: -16px;
+        left: -13px;
       }
-  
+      
       @include atLarge {
         font-size: 1.56rem;
+        left: -16px;
       }
     }
   }
+
+  .tabs.wc-tabs { display: none; }
+
+  .woocommerce-tabs {
+    margin: 0 auto;
+    
+    @include atMedium {
+      max-width: 640px;
+    }
+    h2 {
+      @include indieFont(1.5rem, $gray4);
+      @include atLarge {
+        @include indieFont(2rem, $gray4);
+      }
+    }
+    h2:nth-of-type(2) {
+      @include indieFont(1.25rem, $gray4);
+      @include atLarge {
+        @include indieFont(1.5rem, $gray4);
+      }
+    }
+    p {
+      color: $gray5;
+      font-weight: 600;
+    }
+    tr {
+      color: $gray5;
+    }
+  }
+
 }
