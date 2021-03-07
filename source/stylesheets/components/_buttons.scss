@@ -46,6 +46,10 @@
   // button in single-product.php
   button.button.alt {
     @extend %button;
+    &.disabled, &.disabled:focus, &.disabled:hover {
+      background-color: $gray4;
+      color: #fff;
+    }
   }
 
   // button proceed to checkout
