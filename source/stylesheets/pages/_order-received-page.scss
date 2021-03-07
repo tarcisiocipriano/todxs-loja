@@ -35,6 +35,7 @@
 
   // details table
   table.shop_table {
+    @extend %table-space-between;
     tfoot {
       padding: 12px;
       display: grid;

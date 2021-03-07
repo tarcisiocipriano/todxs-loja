@@ -1,3 +1,34 @@
+%table {
+  @extend %card;
+  tbody {
+    tr:not(:first-child) {
+      border-top: 1px solid $gray2;
+    }
+    td {
+      padding: 4px 12px;
+    }
+  }
+}
+
+%table-space-between {
+  @extend %card;
+  td { border: none; }
+  thead, tbody {
+    tr {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  tbody {
+    tr:not(:first-child) {
+      border-top: 1px solid $gray2;
+    }
+    td {
+      padding: 4px 12px;
+    }
+  }
+}
+
 .woocommerce-cart .woocommerce-cart-form table,
 .woocommerce-cart .cart-collaterals .cart_totals table,
 .woocommerce-checkout-review-order table {
@@ -16,25 +47,4 @@
 // cart table total
 .woocommerce-cart .cart-collaterals .cart_totals table {
   @extend %card;
-}
-
-// order table details base
-.woocommerce-checkout-review-order table.shop_table,
-.woocommerce-order-received table.shop_table {
-  @extend %card;
-  td { border: none; }
-  thead, tbody {
-    tr {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-  tbody {
-    tr:not(:first-child) {
-      border-top: 1px solid $gray2;
-    }
-    td {
-      padding: 4px 12px;
-    }
-  }
 }

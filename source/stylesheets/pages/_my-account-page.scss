@@ -1,0 +1,142 @@
+@mixin unicodeIcon($unicode) {
+  &::before {
+    font-family: fontAwesome;
+    content: $unicode;
+  }
+}
+
+.woocommerce-account.logged-in {
+
+  // resets
+  .woocommerce {
+    &::before, &::after {
+      content: none;
+    }
+  }
+
+  // styles
+  main .woocommerce {
+    display: grid;
+    
+    @include atMedium {
+      column-gap: 16px;
+      grid-template-columns: 200px auto;
+    }
+
+    .woocommerce-MyAccount-navigation,
+    .woocommerce-MyAccount-content {
+      float: none;
+      width: 100%;
+    }
+
+    .woocommerce-MyAccount-navigation {
+      @include untilMedium { grid-row: 2 / 3; }
+      ul {
+        list-style: none;
+        @extend %card;
+        padding: 8px 16px;
+
+        .woocommerce-MyAccount-navigation-link {
+          a {
+            display: flex;
+            padding: .5em 0;
+            font-weight: 600;
+            text-decoration: none;
+            &::before {
+              width: 20px;
+              margin-right: .5em;
+              text-align: center;
+            }
+          }
+        }
+        .woocommerce-MyAccount-navigation-link {
+          &--dashboard a { color: $yellow600; @include unicodeIcon('\f5ba'); }
+          &--orders a { color: $green600; @include unicodeIcon('\f187'); }
+          &--downloads a { color: $blue500; @include unicodeIcon('\f358'); }
+          &--edit-address a { color: $purple400; @include unicodeIcon('\f3c5'); }
+          &--edit-account a { color: $pink500; @include unicodeIcon('\f007'); }
+          &--customer-logout a { color: $red500; @include unicodeIcon('\f2f5'); }
+        }
+      }
+    }
+  }
+
+  &:not(.woocommerce-orders):not(.woocommerce-downloads):not(.woocommerce-edit-address):not(.woocommerce-edit-account)  {
+    // -------------------- painel --------------------
+    .woocommerce-MyAccount-content {
+      @extend %card;
+    }
+  }
+  // -------------------- orders --------------------
+  &.woocommerce-orders .woocommerce-MyAccount-content {
+    table {
+      @extend %table;
+    }
+    .woocommerce-pagination--without-numbers {
+      text-align: right;
+    }
+  }
+  // ------------------- downloads ------------------
+  &.woocommerce-downloads .woocommerce-MyAccount-content {
+  }
+  // ------------------- addresses ------------------
+  &.woocommerce-edit-address .woocommerce-MyAccount-content {
+    .woocommerce-Address {
+      @extend %card;
+    }
+
+    .woocommerce-address-fields__field-wrapper {
+      @extend %card;
+      display: grid;
+      row-gap: 20px;
+      column-gap: 16px;
+      @include atSmall {
+        grid-template-columns: repeat(12, 1fr);
+      }
+    }
+
+    .woocommerce-address-fields > p {
+      margin: 0;
+      text-align: right;
+      button {
+        @extend %button;
+      }
+    }
+  }
+  // ---------------- account details ---------------
+  &.woocommerce-edit-account .woocommerce-MyAccount-content {
+    .woocommerce-EditAccountForm {
+      .clear { display: none; }
+      @extend %card;
+      display: grid;
+      row-gap: 20px;
+
+      p:last-of-type {
+        margin: 0;
+      }
+
+      > p:last-of-type {
+        display: flex;
+        button {
+          @extend %button;
+          width: 100%;
+          align-self: flex-end;
+        }
+      }
+
+      fieldset {
+        legend { display: none; }
+        p { margin-bottom: 20px; }
+      }
+
+      @include atMedium {
+        column-gap: 16px;
+        grid-template-columns: repeat(2, 1fr);
+        fieldset {
+          grid-column: 2 / 3;
+          grid-row: 1 / 4;
+        }
+      }
+    }
+  } // account details
+}
