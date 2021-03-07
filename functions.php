@@ -75,24 +75,26 @@ function todxs_loja_woocommerce_header_add_to_cart_fragment($fragments) {
 	return $fragments;
 }
 
-// query out of stock products by last
-add_filter('posts_clauses', 'order_by_stock_status');
-function order_by_stock_status($posts_clauses) {
-  global $wpdb;
-  // only change query on WooCommerce loops
-  if (is_woocommerce() && (is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy())) {
-    $posts_clauses['join'] .= " INNER JOIN $wpdb->postmeta istockstatus ON ($wpdb->posts.ID = istockstatus.post_id) ";
-    $posts_clauses['orderby'] = " istockstatus.meta_value ASC, " . $posts_clauses['orderby'];
-    $posts_clauses['where'] = " AND istockstatus.meta_key = '_stock_status' AND istockstatus.meta_value <> '' " . $posts_clauses['where'];
+if(class_exists('WooCommerce')) {
+  // query out of stock products by last
+  add_filter('posts_clauses', 'order_by_stock_status');
+  function order_by_stock_status($posts_clauses) {
+    global $wpdb;
+    // only change query on WooCommerce loops
+    if (is_woocommerce() && (is_shop() || is_product_category() || is_product_tag() || is_product_taxonomy())) {
+      $posts_clauses['join'] .= " INNER JOIN $wpdb->postmeta istockstatus ON ($wpdb->posts.ID = istockstatus.post_id) ";
+      $posts_clauses['orderby'] = " istockstatus.meta_value ASC, " . $posts_clauses['orderby'];
+      $posts_clauses['where'] = " AND istockstatus.meta_key = '_stock_status' AND istockstatus.meta_value <> '' " . $posts_clauses['where'];
+    }
+    return $posts_clauses;
   }
-  return $posts_clauses;
-}
 
-// cshange number of products that are displayed per page (shop page)
-add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
-function new_loop_shop_per_page( $cols ) {
-  // $cols contains the current number of products per page based on the value stored on Options –> Reading
-  // Return the number of products you wanna show per page.
-  $cols = 16;
-  return $cols;
+  // cshange number of products that are displayed per page (shop page)
+  add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
+  function new_loop_shop_per_page( $cols ) {
+    // $cols contains the current number of products per page based on the value stored on Options –> Reading
+    // Return the number of products you wanna show per page.
+    $cols = 16;
+    return $cols;
+  }
 }
