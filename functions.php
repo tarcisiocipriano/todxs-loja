@@ -1,7 +1,7 @@
 <?php
 
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
-require_once get_template_directory() . '/inc/customizer.php';
+require_once get_template_directory() . '/inc/customizer/customizer.php';
 require_once get_template_directory() . '/inc/register-sidebars.php';
 if(class_exists('WooCommerce')) {
   require_once get_template_directory() . '/inc/wc-show-percentage.php';

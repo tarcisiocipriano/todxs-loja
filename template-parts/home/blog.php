@@ -5,6 +5,8 @@
   ));
 ?>
 
+<?php $showDeal = get_theme_mod('setting_blog_show', 0); if($showDeal): ?>
+
 <div class="container">
 
   <h2>Blog</h2>
@@ -42,3 +44,5 @@
   </div>
 
 </div>
+
+<?php endif; ?>

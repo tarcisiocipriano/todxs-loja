@@ -1,14 +1,15 @@
 <?php
-  $showDeal = get_theme_mod('set_deal_show', 0);
-  $dealId   = get_theme_mod('set_deal');
+  $showDeal = get_theme_mod('setting_deal_show', 0);
+  $dealId   = get_theme_mod('setting_deal');
   $currency = get_woocommerce_currency_symbol();
   $regular  = get_post_meta($dealId, '_regular_price', true);
   $sale     = get_post_meta($dealId, '_sale_price', true);
-  $discount = absint(100 - ( ( $sale / $regular ) * 100));
 ?>
 
-<?php if($showDeal == 1 && (!empty($dealId))): ?>
-
+<?php if($showDeal == 1 && (!empty($dealId)) && (!empty($sale))):
+  $discount = absint(100 - ( ( $sale / $regular ) * 100));
+?>
+  
   <div class="container">
 
     <h2>Promoção da semana</h2>

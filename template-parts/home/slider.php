@@ -1,8 +1,8 @@
 <?php
   for($i = 1; $i < 4; $i++):
-    $slider_page[$i] = get_theme_mod("set_slider_page{$i}");
-    $slider_button_text[$i] = get_theme_mod("set_slider_button_text{$i}");
-    $slider_button_url[$i] = get_theme_mod("set_slider_button_url{$i}");
+    $slider_page[$i] = get_theme_mod("setting_slider_page{$i}");
+    $slider_button_text[$i] = get_theme_mod("setting_slider_button_text{$i}");
+    $slider_button_url[$i] = get_theme_mod("setting_slider_button_url{$i}");
   endfor;
 
   $slider_loop = new WP_Query(array(
