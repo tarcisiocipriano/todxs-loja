@@ -62,6 +62,7 @@ $card-padding-desktop: 20px;
 .woocommerce ul.products {
   li.product {
     width: 100% !important;
+    margin: 0 !important;
 
     @extend %product-card-container;
 
