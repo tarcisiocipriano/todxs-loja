@@ -20,7 +20,7 @@ function todxs_loja_wc_modify() {
   // sidebar - remove
   remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar');
 
-  if(is_shop()) {
+  if(is_shop() || is_product_category()) {
     add_action('woocommerce_before_main_content', 'todxs_loja_add_sidebar_tags', 6);
     function todxs_loja_add_sidebar_tags() {
       echo '<div class="col-12 col-md-3 col-lg-2 order-2 order-md-1 sidebar-shop">';
@@ -41,7 +41,7 @@ function todxs_loja_wc_modify() {
   // content column - open
   add_action('woocommerce_before_main_content', 'todxs_loja_add_shop_tags', 9);
   function todxs_loja_add_shop_tags() {
-    if(is_shop()) {
+    if(is_shop() || is_product_category()) {
       echo '<div class="col-12 col-md-9 col-lg-10 order-1 order-md-2">';
     } else {
       echo '<div class="col-12">';
@@ -77,6 +77,18 @@ function todxs_loja_wc_modify() {
     }
   }
   
+  /* ------------------------------ utils ------------------------------ */ 
+  // Remove breadcrumbs from shop & categories
+  add_filter( 'woocommerce_before_main_content', 'todxs_loja_remove_breadcrumbs');
+  function todxs_loja_remove_breadcrumbs() {
+    if(!is_product()) {
+      remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20, 0);
+    }
+  }
+
+  // remove catalog ordering
+  remove_action( 'woocommerce_before_shop_loop','woocommerce_catalog_ordering', 30);
+
   // show product short description
   // add_action('woocommerce_after_shop_loop_item_title', 'the_excerpt', 1);
 
