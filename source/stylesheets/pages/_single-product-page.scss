@@ -1,6 +1,22 @@
 .woocommerce.single-product {
-  span.onsale {
-    font-size: 1.56rem;
-    left: 16px;
+  .shop-content {
+    span.onsale {
+      top: 16px;
+      transition: font-size .1s;
+  
+      @include atSmall {
+        font-size: 1.1rem;
+      }
+      
+      @include atMedium {
+        font-size: 1.25rem;
+        top: 32px;
+        left: -16px;
+      }
+  
+      @include atLarge {
+        font-size: 1.56rem;
+      }
+    }
   }
 }

@@ -9,20 +9,23 @@ $badge-cut: 10px;
     padding: .72em .8em .72em .72em;
     background-color: $purple400;
     border-radius: 0;
-
     line-height: 1;
-
-    top: 0;
-    left: 0;
-
-    transform-origin: top left;
-    transform: rotate(90deg) translateY(-100%);
-
+    
+    &::before {
+      content: '';
+      border-width: .38em .34em;
+      border-color: $purple500 $purple500 transparent transparent;
+      border-style: solid;
+      position: absolute;
+      top: 2.4em;
+      left: -.01em;
+    }
+    
     &::after {
       content: '';
       position: absolute;
       top: 0;
-      right: 0;
+      right: 1px;
       width: $badge-cut;
       height: 100%;
       border-width: 1.2em .8em 1.2em 0;
