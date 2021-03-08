@@ -30,7 +30,8 @@
   }
 
   &__widgets {
-    background-color: $gray1;
+    border-top: 1px solid $gray2;
+    background-color: $white;
     .container {
       padding: 8px 16px;
       display: grid;
