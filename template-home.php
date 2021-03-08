@@ -15,13 +15,14 @@ get_header(); ?>
       <?php get_template_part('template-parts/home/popular-products') ?>
     </section>
 
+    <section class="deals">
+      <?php get_template_part('template-parts/home/deals') ?>
+    </section>
+
     <section class="new-arrivals">
       <?php get_template_part('template-parts/home/new-arrivals') ?>
     </section>
 
-    <section class="deal-of-the-week">
-      <?php get_template_part('template-parts/home/deal-of-the-week') ?>
-    </section>
   <?php endif; ?>
 
   <section class="store-blog">

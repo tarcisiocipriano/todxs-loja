@@ -1,0 +1,38 @@
+.deals {
+
+  
+  &__card {
+    @extend %card;
+  }
+  
+  .deal__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .discount {
+      font-size: 3rem;
+      font-weight: 700;
+      animation-name: rainbow;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+    }
+    
+    h3 {
+      font-size: 3rem;
+    }
+  }
+
+
+}
+
+@keyframes rainbow {
+  0%   { color: $purple300; transform: scale(1); }
+  18%  { color: $blue400; }
+  36%  { color: $green500; }
+  54%  { color: $yellow500; transform: scale(1.2); }
+  72%  { color: $red500; }
+  90%  { color: $pink500; }
+  100% { color: $purple300; transform: scale(1); }
+}
