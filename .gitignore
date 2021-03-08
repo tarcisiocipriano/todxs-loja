@@ -1,7 +1,2 @@
 /node_modules
-/maps
-/stylesheets
-/scripts
-/assets
-
 /source/stylesheets/vendors/_sprite.scss
