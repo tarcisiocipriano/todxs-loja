@@ -1,4 +1,8 @@
 .woocommerce-checkout.woocommerce-page {
+
+  h1 { @include indieFont(); }
+  h3 { @include indieFont($purple400, 1.5rem, 2rem); }
+
   .col2-set {
     display: flex;
     flex-direction: column;

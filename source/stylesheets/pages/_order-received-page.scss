@@ -1,5 +1,7 @@
 .woocommerce-order-received {
 
+  h2 { @include indieFont($purple400, 1.5rem, 2rem); }
+
   // structure
   .woocommerce-order {
     display: grid;

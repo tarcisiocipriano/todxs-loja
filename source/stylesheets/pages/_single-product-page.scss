@@ -1,11 +1,6 @@
 .woocommerce.single-product {
 
-  h1 {
-    @include indieFont(2rem);
-    @include atLarge {
-      @include indieFont(3rem);
-    }
-  }
+  h1 { @include indieFont(); }
 
   .woocommerce-product-gallery {
     border-radius: 16px;
@@ -44,18 +39,8 @@
     @include atMedium {
       max-width: 640px;
     }
-    h2 {
-      @include indieFont(1.5rem, $gray4);
-      @include atLarge {
-        @include indieFont(2rem, $gray4);
-      }
-    }
-    h2:nth-of-type(2) {
-      @include indieFont(1.25rem, $gray4);
-      @include atLarge {
-        @include indieFont(1.5rem, $gray4);
-      }
-    }
+    h2 { @include indieFont($gray4, 1.5rem, 2rem); }
+    h2:nth-of-type(2) { @include indieFont($gray4, 1.25rem, 1.5rem); }
     p {
       color: $gray5;
       font-weight: 600;

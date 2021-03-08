@@ -5,6 +5,15 @@
   }
 }
 
+.woocommerce-account {
+  h1 { @include indieFont(); }
+}
+
+.woocommerce-account:not(.logged-in) {
+  h1 { display: none; }
+  h2 { @include indieFont(); }
+}
+
 .woocommerce-account.logged-in {
 
   // resets

@@ -7,9 +7,13 @@ body {
   font-family: 'Rajdhani', sans-serif;
 }
 
-@mixin indieFont($size, $color: $purple400) {
+@mixin indieFont($color: $purple400, $size: 2rem, $sizeAtLarge: 2.5rem) {
   font-family: 'Indie Flower', cursive;
   font-size: $size;
   line-height: 1.2;
   color: $color;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, .1);
+  @include atLarge {
+    font-size: $sizeAtLarge;
+  }
 }

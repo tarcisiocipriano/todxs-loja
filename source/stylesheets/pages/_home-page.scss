@@ -1,0 +1,38 @@
+.home {
+
+  .content-area {
+    .container {
+      > h2 {
+        @include indieFont();
+      }
+    }
+  }
+
+  .popular-products {
+  }
+  
+  .new-arrivals {
+    .container {
+      > h2 {
+        @include indieFont($blue500);
+      }
+    }
+  }
+  
+  .deal-of-the-week {
+    .container {
+      > h2 {
+        @include indieFont($green500);
+      }
+    }
+  }
+  
+  .store-blog {
+    .container {
+      > h2 {
+        @include indieFont($yellow600);
+      }
+    }
+  }
+  
+}
