@@ -20,6 +20,7 @@ function vendors() {
       // 'node_modules/popper.js/dist/umd/popper.min.js',
       'node_modules/bootstrap/dist/js/bootstrap.min.js',
       'node_modules/slick-carousel/slick/slick.min.js',
+      'node_modules/lottie-web/build/player/lottie_light.min.js',
     ])
     .pipe($.sourcemaps.init({ loadMaps: true }))
     .pipe($.concat('vendors.js'))

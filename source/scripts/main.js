@@ -50,3 +50,11 @@ jQuery('.header__close-button').click( function() {
   jQuery('.header__nav').removeClass('show');
   jQuery("body").css("overflow", "auto");
 });
+
+lottie.loadAnimation({
+  container: document.getElementById('rainbow-cat'), // the dom element that will contain the animation
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'https://assets7.lottiefiles.com/packages/lf20_pKGPqV.json' // the path to the animation json
+});

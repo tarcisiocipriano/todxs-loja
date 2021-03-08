@@ -1,0 +1,67 @@
+.my-account-link {
+  position: relative;
+  
+  &__popover {
+    padding: 16px 0 16px 16px;
+    border-radius: 8px;
+    background-color: $purple500;
+    box-shadow: 0 10px 10px rgba($purple500, .3);
+
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 32px;
+    right: -68px;
+
+    transform-origin: 75% -20px;
+    transform: scale(0);
+    transition: transform .2s;
+
+    z-index: 10;
+
+    &__arrow {
+      width: 30px;
+      height: 30px;
+      border-radius: 4px 0 0 0;
+      background-color: $purple500;
+
+      position: absolute;
+      top: -8px;
+      right: 60px;
+      transform: rotate(45deg);
+      z-index: 5;
+    }
+
+    &__menu {
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      li, a {
+        font-size: .875rem;
+        font-weight: 500;
+        // margin: 4px 0;
+        white-space: nowrap;
+        color: $white;
+        text-decoration: none;
+        display: block;
+      }
+      .logout-link {
+        margin-top: 8px;
+        color: $pink400;
+      }
+    }
+
+    #rainbow-cat {
+      transform: scaleX(-1);
+      width: 200px;
+      margin: -60px 0;
+    }
+  }
+
+  &:focus &__popover, &:hover &__popover {
+    transform: scale(1);
+  }
+
+}
