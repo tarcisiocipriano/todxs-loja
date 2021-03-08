@@ -13,6 +13,9 @@ jQuery('.slick-popular').slick({
   infinite: true,
   slidesToShow: 5,
   touchMove: false,
+  autoplay: true,
+  autoplaySpeed: 4000,
+  speed: 500,
   // slidesToScroll: 5,
   arrows: true,
   dots: false,
@@ -21,21 +24,21 @@ jQuery('.slick-popular').slick({
       breakpoint: 993,
       settings: {
         slidesToShow: 4,
-        // slidesToScroll: 4,
+        arrows: false,
       }
     },
     {
       breakpoint: 769,
       settings: {
         slidesToShow: 3,
-        // slidesToScroll: 3
+        arrows: false,
       }
     },
     {
       breakpoint: 576,
       settings: {
         slidesToShow: 2,
-        // slidesToScroll: 2
+        arrows: false,
       }
     }
   ]

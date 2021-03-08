@@ -9,12 +9,31 @@
     width: 50px;
     height: 50px;
     z-index: 10;
+    background-color: $white;
+    border-radius: 50%;
+    box-shadow: 0 10px 10px rgba($purple300, .2);
+    top: 40%;
+    &:focus, &:hover {
+      background-color: $white;
+    }
   }
   &-next {
-    right: 0;
+    right: -20px;
+    &::before {
+      opacity: 1;
+      font-family: "fontAwesome";
+      color: $purple400;
+      content: "\f054";
+    }
   }
   &-prev {
-    left: 0;
+    left: -20px;
+    &::before {
+      opacity: 1;
+      font-family: "fontAwesome";
+      color: $purple400;
+      content: "\f053";
+    }
   }
 
   &-dots {
