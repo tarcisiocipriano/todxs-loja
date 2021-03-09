@@ -4,56 +4,162 @@
 $wp_customize->add_section(
   'section_slider', array(
     'title'       => 'Configurações dos slides',
-    'description' => 'Coloque a página do slide, o texto e link do botão'
+    'description' => 'Copie os links das imagens na galeria e cole abaixo, para os slides grandes e pequenos. Não esqueça de por um link para redirecionar o usuário.'
   )
 );
-for($i = 1; $i < 4; $i++) {
-  // field 1 - slider page
+  // how many?
   $wp_customize->add_setting(
-    "setting_slider_page{$i}", array(
+    "setting_slider_quantity", array(
       'type'              => 'theme_mod',
       'default'           => '',
       'sanitize_callback' => 'absint'
     )
   );
   $wp_customize->add_control(
-    "setting_slider_page{$i}", array(
-      'label'       => "Selecione o slider {$i}",
-      // 'description' => "Selecione o slider {$i}",
+    "setting_slider_quantity", array(
+      'label'       => "Quantidade",
+      'description' => "De 1 a 3",
       'section'     => 'section_slider',
-      'type'        => 'dropdown-pages'
+      'type'        => 'number'
     )
   );
-  // field 2 - slider button text
+  // -------------------------------------------------- Slide 1 --------------------------------------------------
+  // image large
   $wp_customize->add_setting(
-    "setting_slider_button_text{$i}", array(
-      'type'              => 'theme_mod',
-      'default'           => '',
-      'sanitize_callback' => 'sanitize_text_field'
-    )
-  );
-  $wp_customize->add_control(
-    "setting_slider_button_text{$i}", array(
-      'label'       => "Escreva o texto do botão {$i}",
-      // 'description' => "Escreva o texto do botão {$i}",
-      'section'     => 'section_slider',
-      'type'        => 'text'
-    )
-  );
-  // field 3 - slider button url
-  $wp_customize->add_setting(
-    "setting_slider_button_url{$i}", array(
+    "setting_slider_image_large_1", array(
       'type'              => 'theme_mod',
       'default'           => '',
       'sanitize_callback' => 'esc_url_raw'
     )
   );
   $wp_customize->add_control(
-    "setting_slider_button_url{$i}", array(
-      'label'       => "Escreva o link do botão {$i}",
-      // 'description' => "Escreva o link do botão {$i}",
+    "setting_slider_image_large_1", array(
+      'label'       => "Url imagem grande 1",
       'section'     => 'section_slider',
       'type'        => 'url'
     )
   );
-}
+  // image small
+  $wp_customize->add_setting(
+    "setting_slider_image_small_1", array(
+      'type'              => 'theme_mod',
+      'default'           => '',
+      'sanitize_callback' => 'esc_url_raw'
+    )
+  );
+  $wp_customize->add_control(
+    "setting_slider_image_small_1", array(
+      'label'       => "Url imagem pequena 1",
+      'section'     => 'section_slider',
+      'type'        => 'url'
+    )
+  );
+  // slide link
+  $wp_customize->add_setting(
+    "setting_slider_link_1", array(
+      'type'              => 'theme_mod',
+      'default'           => '',
+      'sanitize_callback' => 'esc_url_raw'
+    )
+  );
+  $wp_customize->add_control(
+    "setting_slider_link_1", array(
+      'label'       => "Url link 1",
+      'section'     => 'section_slider',
+      'type'        => 'url'
+    )
+  );
+
+  // -------------------------------------------------- Slide 2 --------------------------------------------------
+  // image large
+  $wp_customize->add_setting(
+    "setting_slider_image_large_2", array(
+      'type'              => 'theme_mod',
+      'default'           => '',
+      'sanitize_callback' => 'esc_url_raw'
+    )
+  );
+  $wp_customize->add_control(
+    "setting_slider_image_large_2", array(
+      'label'       => "Url imagem grande 2",
+      'section'     => 'section_slider',
+      'type'        => 'url'
+    )
+  );
+  // image small
+  $wp_customize->add_setting(
+    "setting_slider_image_small_2", array(
+      'type'              => 'theme_mod',
+      'default'           => '',
+      'sanitize_callback' => 'esc_url_raw'
+    )
+  );
+  $wp_customize->add_control(
+    "setting_slider_image_small_2", array(
+      'label'       => "Url imagem pequena 2",
+      'section'     => 'section_slider',
+      'type'        => 'url'
+    )
+  );
+  // slide link
+  $wp_customize->add_setting(
+    "setting_slider_link_2", array(
+      'type'              => 'theme_mod',
+      'default'           => '',
+      'sanitize_callback' => 'esc_url_raw'
+    )
+  );
+  $wp_customize->add_control(
+    "setting_slider_link_2", array(
+      'label'       => "Url link 2",
+      'section'     => 'section_slider',
+      'type'        => 'url'
+    )
+  );
+
+  // -------------------------------------------------- Slide 3 --------------------------------------------------
+  // image large
+  $wp_customize->add_setting(
+    "setting_slider_image_large_3", array(
+      'type'              => 'theme_mod',
+      'default'           => '',
+      'sanitize_callback' => 'esc_url_raw'
+    )
+  );
+  $wp_customize->add_control(
+    "setting_slider_image_large_3", array(
+      'label'       => "Url imagem grande 3",
+      'section'     => 'section_slider',
+      'type'        => 'url'
+    )
+  );
+  // image small
+  $wp_customize->add_setting(
+    "setting_slider_image_small_3", array(
+      'type'              => 'theme_mod',
+      'default'           => '',
+      'sanitize_callback' => 'esc_url_raw'
+    )
+  );
+  $wp_customize->add_control(
+    "setting_slider_image_small_3", array(
+      'label'       => "Url imagem pequena 3",
+      'section'     => 'section_slider',
+      'type'        => 'url'
+    )
+  );
+  // slide link
+  $wp_customize->add_setting(
+    "setting_slider_link_3", array(
+      'type'              => 'theme_mod',
+      'default'           => '',
+      'sanitize_callback' => 'esc_url_raw'
+    )
+  );
+  $wp_customize->add_control(
+    "setting_slider_link_3", array(
+      'label'       => "Url link 3",
+      'section'     => 'section_slider',
+      'type'        => 'url'
+    )
+  );

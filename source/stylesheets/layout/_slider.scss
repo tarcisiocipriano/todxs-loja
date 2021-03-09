@@ -1,0 +1,16 @@
+.slider-hero {
+  display: flex !important;
+  justify-content: center;
+
+  picture, img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    @include atSmall {
+      -o-object-fit: cover;
+      object-fit: cover;
+      height: 40vw;
+      max-height: 400px;
+    }
+  }
+}
