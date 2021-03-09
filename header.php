@@ -48,7 +48,7 @@
             <h2>Olá</h2>
             <button class="header__close-button"><i class="fas fa-times"></i></button>
           </div>
-          <?php if(is_active_sidebar('todxs-loja-sidebar-header')): dynamic_sidebar('todxs-loja-sidebar-header'); endif;?>
+          <?php if(is_active_sidebar('todxs-loja-sidebar-header-nav')): dynamic_sidebar('todxs-loja-sidebar-header-nav'); endif;?>
         </div>
       </section>
 

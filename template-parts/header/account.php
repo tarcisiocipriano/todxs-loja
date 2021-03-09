@@ -17,7 +17,7 @@
     <div class="my-account-link__popover__menu">
       <?php
         wp_nav_menu(array(
-          'theme_location' => 'todxs_loja_nav_top_menu'
+          'theme_location' => 'todxs_loja_my_account_popover_menu'
         ));
       ?>
       <?php if(is_user_logged_in()): $my_account_page_id = get_permalink(get_option('woocommerce_myaccount_page_id')); ?>

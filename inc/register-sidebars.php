@@ -4,8 +4,8 @@ add_action('widgets_init', 'todxs_loja_sidebars');
 function todxs_loja_sidebars() {
   register_sidebar(array(
     'name'          => 'Todxs Loja Main Sidebar',
-    'id'            => 'todxs-loja-sidebar-1',
-    'description'   => 'Arraste suas widgets para cá',
+    'id'            => 'todxs-loja-main-sidebar',
+    'description'   => 'Arraste suas widgets da sidebar principal para cá',
     'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4 class="widget-title">',
@@ -21,14 +21,16 @@ function todxs_loja_sidebars() {
     'after_title'   => '</h4>'
   ));
   register_sidebar(array(
-    'name'          => 'Todxs Loja Header Sidebar',
-    'id'            => 'todxs-loja-sidebar-header',
+    'name'          => 'Todxs Loja Header Nav Sidebar',
+    'id'            => 'todxs-loja-sidebar-header-nav',
     'description'   => 'Arraste suas widgets para cá',
     'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper widget-header">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4 class="widget-title">',
     'after_title'   => '</h4>'
   ));
+
+  // footer menus
   register_sidebar(array(
     'name'          => 'Todxs Loja Footer Sidebar 1',
     'id'            => 'todxs-loja-sidebar-footer-1',
