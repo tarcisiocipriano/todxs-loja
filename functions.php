@@ -98,4 +98,10 @@ if(class_exists('WooCommerce')) {
     $cols = 16;
     return $cols;
   }
+
+  // return to home instead of shop
+  add_filter('woocommerce_return_to_shop_redirect', 'todxs_loja_change_return_shop_url');
+  function todxs_loja_change_return_shop_url() {
+    return home_url();
+  }
 }
