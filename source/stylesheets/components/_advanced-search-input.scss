@@ -50,6 +50,7 @@ div.dgwt-wcas-search-wrapp {
 
 // suggestions container
 div.dgwt-wcas-suggestions-wrapp {
+  z-index: 10 !important;
   padding: 16px 0;
   border: none;
   border-top: 1px solid $gray5;
