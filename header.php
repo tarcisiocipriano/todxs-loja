@@ -15,7 +15,7 @@
 
       <section class="header__nav-top">
         <div class="container">
-          <span>(81) 00000-0000</span>
+          <span class="header__nav-top__contact"><?php echo '<span class="icon icon--social-whatsapp-white"></span>'.get_theme_mod('setting_nav_top_contact_number'); ?></span>
           <?php
             wp_nav_menu(array(
               'theme_location' => 'todxs_loja_nav_top_menu'

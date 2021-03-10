@@ -7,6 +7,7 @@
 */
 
 function todxs_loja_customizer($wp_customize) {
+  require_once get_template_directory() . '/inc/customizer/miscellaneous.php';
   require_once get_template_directory() . '/inc/customizer/slider.php';
   require_once get_template_directory() . '/inc/customizer/products-popular.php';
   require_once get_template_directory() . '/inc/customizer/products-arrivals.php';

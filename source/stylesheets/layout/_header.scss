@@ -1,6 +1,6 @@
 .header {
   // -------------------- header__nav-top --------------------
-  &__nav-top{
+  &__nav-top {
     background-color: $purple500;
     padding: .25em 0;
     color: $white;
@@ -9,7 +9,6 @@
     .container {
       display: flex;
       justify-content: space-between;
-      span { display: block; }
       ul {
         display: flex;
         list-style: none;
@@ -17,6 +16,12 @@
         li { margin-left: 1em; }
         a { color: $white; }
       }
+    }
+    &__contact {
+      .icon {
+        margin-right: 8px;
+      }
+      display: flex;
     }
   }
   
