@@ -44,10 +44,28 @@
       
       <section class="header__nav">
         <div class="container categories-container show">
-          <div class="header__nav-mobile-header">
-            <h2>Olá</h2>
-            <button class="header__close-button"><i class="fas fa-times"></i></button>
+
+          <div class="header__nav__mobile-header">
+            <div class="header__nav__mobile-header__welcome">
+              <p>Olá
+                <?php if(is_user_logged_in()): $current_user = wp_get_current_user();
+                  echo esc_html( $current_user->user_login ); else:
+                ?>
+                  <span>você</span>
+                <?php endif; ?>
+              </p>
+              <button class="header__close-button"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="header__nav__mobile-header__menu">
+              <?php
+                wp_nav_menu(array(
+                  'theme_location' => 'todxs_loja_my_account_popover_menu'
+                ));
+              ?>
+            </div>
           </div>
+
+          <!-- menu list -->
           <?php if(is_active_sidebar('todxs-loja-sidebar-header-nav')): dynamic_sidebar('todxs-loja-sidebar-header-nav'); endif;?>
         </div>
       </section>

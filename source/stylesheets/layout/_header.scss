@@ -123,14 +123,36 @@
       }
     }
 
-    &-mobile-header {
-      padding: 20px 28px;
-      display: flex;
-      justify-content: space-between;
+    &__mobile-header {
+      padding: 20px 28px 0 28px;
       background-color: $purple400;
       color: $white;
-      h2 { margin: 0 ;}
       @include atLarge { display: none; }
+
+      &__welcome {
+        display: flex;
+        justify-content: space-between;
+        p {
+          margin: 0 ;
+          font-size: 2rem;
+          font-weight: 600;
+        }
+      }
+
+      &__menu {
+        ul {
+          display: flex;
+          justify-content: space-between;
+          padding: 0 !important;
+          li {
+            border: none !important;
+            a {
+              color: $white;
+            }
+          }
+        }
+      }
+      
       .header__close-button {
         @extend %button-unstyled;
         color: $white;

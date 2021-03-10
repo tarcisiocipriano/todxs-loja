@@ -21,7 +21,6 @@
         ));
       ?>
       <?php if(is_user_logged_in()): $my_account_page_id = get_permalink(get_option('woocommerce_myaccount_page_id')); ?>
-        <!-- to do - change password link  -->
         <a class="change-password-link" href="<?php echo esc_url(get_theme_mod('setting_chang_password_link')); ?>">Alterar senha</a>
         <a class="logout-link" href="<?php echo esc_url(wp_logout_url($my_account_page_id)); ?>">Sair</a>
       <?php endif; ?>
