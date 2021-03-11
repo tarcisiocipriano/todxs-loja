@@ -3,6 +3,7 @@
   h1 { @include indieFont(); }
   h3 { @include indieFont($purple400, 1.5rem, 2rem); }
 
+  // resets
   .col2-set {
     display: flex;
     flex-direction: column;
@@ -13,6 +14,7 @@
     max-width: 100%;
   }
 
+  // styling
   .woocommerce-billing-fields__field-wrapper,
   .woocommerce-shipping-fields__field-wrapper {
     @extend %card;
@@ -29,6 +31,14 @@
 
   .woocommerce-account-fields .create-account {
     @extend %card;
+    display: grid;
+    column-gap: 16px;
+    row-gap: 20px;
+    
+    @include atSmall {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .clear { display: none; }
   }
   
   
