@@ -14,10 +14,48 @@
     max-width: 100%;
   }
 
+  // -------------------- login --------------------
+  .woocommerce-form-login-toggle {
+    text-align: center;
+  }
+  .woocommerce {
+    & form.login {
+      @extend %card;
+      display: grid;
+      row-gap: 20px;
+      align-items: center;
+      max-width: 600px;
+      margin: 0 auto 24px;
+
+      p { margin: 0; }
+      .clear { display: none; }
+  
+      .form-row:nth-child(5) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &::before, &::after { content: none; }
+        button {
+          @extend %button;
+          margin: 0;
+        }
+      }
+      .lost_password { text-align: center; }
+    }
+  }
+
   // -------------------- coupon --------------------
+  .woocommerce-form-coupon-toggle {
+    text-align: center;
+  }
+  .woocommerce-message,
+  .woocommerce-error {
+    left: 50%;
+    transform: translateX(-50%);
+  }
   .checkout_coupon {
     @extend %card;
-    margin: 0 0 24px 0;
+    margin: 0 auto 24px;
     display: grid;
     column-gap: 16px;
     row-gap: 20px;
