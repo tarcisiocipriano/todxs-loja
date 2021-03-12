@@ -54,7 +54,7 @@ function todxs_loja_wc_modify() {
     echo '</div>';
   }
 
-  /* ------------------------------ sinle product page - move related content to separated area ------------------------------ */ 
+  /* ------------------------------ single product page - move related content to separated area ------------------------------ */ 
 
   if(is_product()) {
     // remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
@@ -107,6 +107,10 @@ function todxs_loja_wc_modify() {
     };
     return $tabs;
   }, 98 );
+
+  // realocate coupon on checkout page
+  // remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+  // add_action( 'woocommerce_after_checkout_form', 'woocommerce_checkout_coupon_form' );
 
   // add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
   // function woo_remove_product_tabs( $tabs ) {

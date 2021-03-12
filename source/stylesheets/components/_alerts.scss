@@ -5,7 +5,6 @@
 
   &::before {
     font-family: fontAwesome;
-    content: '\f06a';
     font-size: 2rem;
     top: 0;
     left: 16px;
@@ -18,9 +17,23 @@
 .woocommerce-info {
   @extend %alert;
   @extend .alert-info;
+  &::before {
+    content: '\f06a';
+  }
 }
 
 .woocommerce-error {
   @extend %alert;
   @extend .alert-danger;
+  &::before {
+    content: '\f05e';
+  }
+}
+
+.woocommerce-message {
+  @extend %alert;
+  @extend .alert-success;
+  &::before {
+    content: '\f00c';
+  }
 }

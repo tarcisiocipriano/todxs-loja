@@ -109,7 +109,7 @@ table.shop_table {
 
 .coupon {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   column-gap: 16px;
   
   @include atMedium {
