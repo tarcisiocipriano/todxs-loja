@@ -1,21 +1,36 @@
-.woocommerce {
-  input:not(.woocommerce-form__input-checkbox):not(.shipping_method) {
-    padding: 8px 8px;
-    border: 1px solid $gray3;
-    width: 100%;
-    border-radius: 8px;
-  }
+%input {
+  padding: 8px 8px;
+  border: 1px solid $gray3;
+  width: 100%;
+  border-radius: 8px;
+}
 
-  form .form-row.woocommerce-validated input.input-text {
-    border-color: $green300;
-  }
+%input-label--valid {
+  border-color: $gray3;
+}
 
-  form .form-row.woocommerce-invalid input.input-text {
-    border-color: $red400;
-  }
-
-  form .form-row.woocommerce-invalid label {
+%input-label--invalid {
+  border-color: $red400;
+  label, .required {
     color: $red400;
+  }
+}
+
+.woocommerce {
+  input[type=text], input[type=password], input[type=email], input[type=tel], textarea {
+    @extend %input;
+  }
+  
+  form .form-row.woocommerce-validated input.input-text {
+    @extend %input-label--valid;
+  }
+  
+  form .form-row.woocommerce-invalid input.input-text {
+    @extend %input-label--invalid;
+  }
+  
+  form .form-row.woocommerce-invalid {
+    @extend %input-label--invalid;
   }
 }
 
@@ -37,7 +52,7 @@
       }
       font-weight: 400;
       .required {
-        color: $purple100;
+        color: $purple400;
       }
     }
     .show-password-input {
