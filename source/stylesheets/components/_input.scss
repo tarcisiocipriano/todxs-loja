@@ -40,5 +40,16 @@
         color: $purple100;
       }
     }
+    .show-password-input {
+      &::after {
+        font-family: fontAwesome;
+        content: '\f06e';
+        color: $purple400;
+      }
+      &.display-password::after {
+        content: '\f070';
+        color: $purple400;
+      }
+    }
   }
 }
