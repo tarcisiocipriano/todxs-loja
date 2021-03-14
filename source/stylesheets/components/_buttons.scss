@@ -21,6 +21,11 @@
     color: $green700;
     border: 2px solid $green700;
   }
+  &:disabled {
+    background-color: $gray4;
+    color: #fff;
+    border-color: $gray4;
+  }
 }
 
 %button-unstyled {
