@@ -1,8 +1,12 @@
 %input {
-  padding: 8px 8px;
-  border: 1px solid $gray3;
-  width: 100%;
-  border-radius: 8px;
+  padding: 8px 8px !important;
+  border: 1px solid $gray3 !important;
+  width: 100% !important;
+  border-radius: 8px !important;
+  &:focus, &:hover {
+    border: none;
+    outline: none;
+  }
 }
 
 %input-label--valid {

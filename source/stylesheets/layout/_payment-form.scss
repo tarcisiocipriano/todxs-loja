@@ -1,5 +1,49 @@
 .woocommerce-checkout-payment {
-  input {
-    @extend %input;
+  input[type=radio] {
+    margin-right: 8px !important;
   }
+  &#payment {
+    @extend %card;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: fit-content !important;
+    ul.payment_methods {
+      padding: 0;
+      li {
+        padding: 8px 0;
+        > label {
+          margin: 0 !important;
+        }
+      }
+      li:not(:last-child) {
+        border-bottom: 1px solid $gray3;
+        
+      }
+    }
+    div.payment_box {
+      background-color: transparent;
+      padding: 0;
+      &::before {
+        content: none;
+      }
+      > div {
+        padding: 0;
+      }
+    }
+  }
+
+
+  .mp-row-checkout {
+    em {
+      margin: 0;
+      position: relative;
+    }
+    label, em {
+      color: $purple400 !important;
+    }
+  }
+
+  .form-row.place-order {
+  }
+  
 }
