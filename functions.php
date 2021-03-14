@@ -42,7 +42,7 @@ function todxs_loja_config() {
 
   add_theme_support('woocommerce', array(
     'thumbnail_image_width' => 255,
-    'single_image_width'    => 255,
+    'single_image_width'    => 800,
     'product_grid'          => array(
       'default_rows'    => 10,
       'min_rows'        => 5,
