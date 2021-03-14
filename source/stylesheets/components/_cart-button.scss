@@ -1,7 +1,8 @@
 .cart-button {
+  padding-bottom: 4px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   text-align: center;
   
   width: 40px;
@@ -14,6 +15,11 @@
   &:focus, &:hover {
     color: $white;
     text-decoration: none;
+  }
+
+  @include atLarge {
+    padding-bottom: 0;
+    align-items: center;
   }
 }
 
@@ -33,6 +39,10 @@
   transform: translateX(-50%);
 
   position: absolute;
-  top: -4px;
+  top: 2px;
   left: 28px;
+  
+  @include atLarge {
+    top: -4px;
+  }
 }

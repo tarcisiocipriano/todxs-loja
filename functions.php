@@ -34,8 +34,8 @@ function todxs_loja_config() {
   add_theme_support('wc-product-gallery-slider');
 
   add_theme_support('custom-logo', array(
-    'height'      => 40,
-    'width'       => 100,
+    'height'      => 120,
+    'width'       => 280,
     'flex_height' => true,
     'flex_width'  => true
   ));
