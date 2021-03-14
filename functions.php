@@ -99,6 +99,15 @@ if(class_exists('WooCommerce')) {
     return $cols;
   }
 
+  add_filter('woocommerce_pagination_args', 'todxs_loja_pagination');
+  function todxs_loja_pagination() {
+    return array(
+      'type' => 'list',
+      'end_size' => 1,
+      'mid_size' => 1,
+    );
+  }
+
   // return to home instead of shop
   add_filter('woocommerce_return_to_shop_redirect', 'todxs_loja_change_return_shop_url');
   function todxs_loja_change_return_shop_url() {
