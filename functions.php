@@ -113,4 +113,16 @@ if(class_exists('WooCommerce')) {
   function todxs_loja_change_return_shop_url() {
     return home_url();
   }
+
+  // make change to second photo on hover
+  // https://stackoverflow.com/questions/62088615/switch-product-image-on-hover-on-woocommerce-archive-page
+  add_action( 'woocommerce_before_shop_loop_item_title', 'todoxs_loja_add_on_hover_shop_loop_image' ) ; 
+  function todoxs_loja_add_on_hover_shop_loop_image() {
+    $image_id = wc_get_product()->get_gallery_image_ids()[0] ; 
+    if ( $image_id ) {
+      echo wp_get_attachment_image( $image_id ) ;
+    } else {  //assuming not all products have galleries set
+      echo wp_get_attachment_image( wc_get_product()->get_image_id() ) ; 
+    }
+  }
 }
